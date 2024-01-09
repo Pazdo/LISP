@@ -1,0 +1,4691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0045)https://jtra.cz/stuff/lisp/sclr/allprint.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Simplified Common Lisp reference</title>
+<link rel="stylesheet" href="./Simplified Common Lisp reference_files/sclrprint.css" type="text/css">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style>.ucbzx-button-wrapper {
+    position: absolute !important;
+    z-index: 1000 !important;
+    top: 0 !important;
+    right: 0 !important;
+}
+
+.ucbzx-button {
+    display: block;
+    border: none !important;
+    /* outline: none !important; */
+    background: #3c3c54 !important;
+    padding: 0 !important;
+    border-radius: 5px;
+    width: 36px !important;
+    height: 36px !important;
+}
+
+.ucbzx-button:active {
+    border: none !important;
+}
+
+.ucbzx-button:disabled {
+    cursor: default !important;
+}
+
+.ucbzx-download-img {
+    display: block !important;
+    width: 36px !important;
+    height: 36px !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+}
+
+.ucbzx-hide {
+    display: none !important;
+}
+
+.ucbzx-loader {
+    display: block;
+    box-sizing: content-box !important;
+    width: 30px !important;
+    height: 30px !important;
+    padding: 3px !important;
+    animation: rotate 1s linear infinite;
+    margin: 0 !important;
+}
+
+/*
+    RESOLUTIONS CHOICE
+*/
+
+.ucbzx-resolutions-list {
+    position: absolute !important;
+    top: 36px !important;
+    right: 0 !important;
+    background: #3c3c54 !important;
+    color: #dbdbdb !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ucbzx-resolutions-list li {
+    margin: 4px !important;
+    padding: 0 !important;
+    font-weight: bold !important;
+    white-space: nowrap !important;
+    width: 130px !important;
+    height: 30px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.ucbzx-list-item-tickbox {
+    width: 20px !important;
+    height: 20px !important;
+    background: rgba(255, 255, 255, 0.219) !important;
+    /* border-radius: 5px !important; */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    /* font-size: 17px !important; */
+    /* border: 1px solid rgba(255, 255, 255, 0.835) !important; */
+    cursor: pointer !important;
+    margin-left: 4px !important;
+}
+
+.ucbzx-resolutions-list > li::before {
+    display: none;
+}
+
+.ucbzx-list-item-tickbox:not(.ucbzx-list-item-tickbox-checked):hover {
+    background: rgba(255, 255, 255, 0.37) !important;
+}
+
+.ucbzx-list-item-tickbox.ucbzx-list-item-tickbox-checked {
+    cursor: default !important;
+}
+
+.ucbzx-list-item-tickbox-checked::after {
+    content: "\2713" !important;
+    color: white !important;
+}
+
+.ucbzx-list-item-text {
+    /* border-radius: 5px !important; */
+    flex-grow: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    height: 100% !important;
+    margin-left: 10px !important;
+}
+
+.ucbzx-list-item-text:hover {
+    background: rgba(255, 255, 255, 0.37) !important;
+    color: white !important;
+}
+
+/* account for the fact that we got rid of the tickbox there */
+.ucbzx-resolutions-list li[data-type="captions"] .ucbzx-list-item-text {
+    margin-left: 34px !important;
+    font-style: italic;
+}
+
+/*
+    MISC
+*/
+
+.ucbzx-arrow-container {
+    background: none !important;
+    position: absolute !important;
+    top: 36px !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 18px solid transparent !important;
+    border-right: 18px solid transparent !important;
+    border-top: 18px solid #3c3c54 !important;
+    /* border-bottom: none !important; */
+    cursor: pointer !important;
+}
+
+.ucbzx-arrow-container::after {
+    position: absolute !important;
+    top: -18px !important;
+    left: -4px !important;
+    content: "" !important;
+    border: 1px solid #dbdbdb !important;
+    border-width: 0 3px 3px 0 !important;
+    display: inline-block !important;
+    padding: 3px !important;
+    transform: rotate(45deg);
+}
+
+.ucbzx-button:focus,
+.ucbzx-arrow-container:focus,
+.ucbzx-resolutions-list:focus,
+.ucbzx-list-item-tickbox:focus,
+.ucbzx-list-item-text:focus {
+    outline: 1px solid white !important;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+    RESET STYLES
+*/
+.ucbzx-button-wrapper button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    outline: none;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+}
+
+.ucbzx-button-wrapper li,
+.ucbzx-button-wrapper li * {
+    margin: 0;
+    font: inherit;
+    font-style: inherit;
+    font-size: inherit;
+}</style><script src="chrome-extension://njgehaondchbmjmajphnhlojfnbfokng/js/contentScripts/dom.js"></script></head>
+<body>
+<div class="topbar">
+<a class="goindextop" href="https://jtra.cz/stuff/lisp/sclr/index.html">Simplified Common Lisp reference</a><div class="topbarname">INDEX</div>
+</div>
+<div class="topbar2"></div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_math">Mathematics, Arithmetics, Logic and Comparisons</div>
+<div class="categoryinside">* + - / /= 1+ 1- &lt; &lt;= = &gt; &gt;= and ceiling cos decf eq eql equal equalp exp expt floor incf isqrt logand logior max min mod nil not or random round sin sqrt t zerop </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_cons">Conses, Lists and related functions</div>
+<div class="categoryinside">append assoc butlast car cddr cdr cons consp first getf  last list list-length listp mapc mapcan mapcar mapcon maplist member null pop push pushnew rest rplaca rplacd second set-difference union </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_sequence">Sequences (Lists, Strings) and Arrays</div>
+<div class="categoryinside">aref concatenate copy-seq count elt find length make-array make-sequence map map-into position reduce remove reverse search some string string-downcase string-upcase subseq vector vector-pop vector-push vector-push-extend </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_other">Symbol, Characters, Hash, Structure, Objects and Conversions</div>
+<div class="categoryinside">atom   coerce    gethash intern make-hash-table  </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_io">Input and output</div>
+<div class="categoryinside">format   read read-char read-line write-string </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_control">Functions, Evaluation, Flow Control, Definitions and Syntax</div>
+<div class="categoryinside">apply  case cond   defparameter defun     eval flet funcall function if labels lambda let   progn quote  setf setq   </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_math">Mathematics, Arithmetics, Logic and Comparisons</div>
+<div class="categoryinside">
+<div class="topbar"><div class="topbarname">*</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">*</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+* function computes product of numbers. It does type conversions for
+numbers. There is no wraparound in integer numbers - they are
+arbitrary long. It works for all number types including integer,
+rational, floating point and complex.
+</p>
+<pre class="example">(* 1 2 3) =&gt; 6
+(* 1 2) =&gt; 2
+(* 1) =&gt; 1
+(*) =&gt; 1
+</pre>
+<pre class="example">(* 1234567890123456789 9876543210987654321) =&gt; 12193263113702179522374638011112635269
+(* 1.3 -5) =&gt; -6.5
+(* 1.3d0 -5) =&gt; -6.5d0
+(* #c(2 4) 3) =&gt; #C(6 12)
+(* 3/4 7/9) =&gt; 7/12
+</pre>
+
+ <div class="topbar"><div class="topbarname">+</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">+</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
++ function computes sum of numbers. It does type conversions for
+numbers. There is no wraparound in integer numbers - they are
+arbitrary long. It works for all number types including integer,
+rational, floating point and complex.
+</p>
+<pre class="example">(+ 1 2 3) =&gt; 6
+(+ 1 2) =&gt; 3
+(+ 1) =&gt; 1
+(+) =&gt; 0
+</pre>
+<pre class="example">(+ 1234567890123456789 9876543210987654321) =&gt; 11111111101111111110
+(+ 1.3 -5) =&gt; -3.7
+(+ 1.3d0 -5) =&gt; -3.7d0
+(+ #c(2 4) 1) =&gt; #C(3 4)
+(+ 3/4 7/9) =&gt; 55/36
+</pre>
+
+ <div class="topbar"><div class="topbarname">-</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">-</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+- function computes difference between first value and sum of the
+rest. When called with only one argument, it does negation. It does
+type conversions for numbers. There is no wraparound in integer
+numbers - they are arbitrary long. It works for all number types
+including integer, rational, floating point and complex.
+</p>
+<pre class="example">(- 1 2 3) =&gt; -4
+(- 1 2) =&gt; -1
+(- 1) =&gt; -1
+</pre>
+<pre class="example">(- 1234567890123456789 9876543210987654321) =&gt; -8641975320864197532
+(- 1.3 -5) =&gt; 6.3
+(- 1.3d0 -5) =&gt; 6.3d0
+(- #c(2 4) 1) =&gt; #C(1 4)
+(- 3/4 7/9) =&gt; -1/36
+</pre>
+
+ <div class="topbar"><div class="topbarname">/</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">/</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+/ function computes division or reciprocal. When called with one
+argument it computes reciprocal. When called with two or more
+arguments it does compute division of the first by the all remaining
+number. It does type conversions for numbers. It works for all number
+types including integer, rational, floating point and complex. Note
+that division by zero invokes DIVISION-BY-ZERO condition.
+</p>
+<pre class="example">(/ 10) =&gt; 1/10
+(/ 10.0) =&gt; 0.1
+</pre>
+<pre class="example">(/ 10 2) =&gt; 5
+(/ 2 10) =&gt; 1/5
+(/ 100 2 5 2) =&gt; 5
+(/ 100 (* 2 5 2)) =&gt; 5
+</pre>
+<pre class="example">(/ 1234567890123456789 9876543210987654321) =&gt; 13717421/109739369
+(/ 1.3 -5) =&gt; -0.26
+(/ 1.3d0 -5) =&gt; -0.26d0
+(/ #c(2 4) 3) =&gt; #C(2/3 4/3)
+(/ 3/4 7/9) =&gt; 27/28
+</pre>
+
+ <div class="topbar"><div class="topbarname">/=</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">/=</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+/= function compares numbers according to "equal" predicate. Result is
+true if no two numbers are equal to each other, otherwise result is
+false. Note that only two argument version result is negation of =
+function, that is (/= a b) is same as (not (= a b)).
+</p>
+<pre class="example">(/= 1 2) =&gt; T
+(/= 2 1) =&gt; T
+(/= 2 2.001) =&gt; T
+(/= 2 2) =&gt; NIL
+(/= 2 2.0) =&gt; NIL
+(/= 0.0 -0.0) =&gt; NIL
+(/= #c(1.2 4.5) #c(1.2 4.5)) =&gt; NIL
+</pre>
+<pre class="example">(/= 1 2 3 4 5) =&gt; T
+(/= 4 4 4 3 4) =&gt; NIL
+(/= 1 2 3 4 4) =&gt; NIL
+(/= 1 2 3 4.0 4) =&gt; NIL
+(/= 5) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">1+</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">1+</span><span class="syntaxargs"><span class="syntaxargname">number</span></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">numeric value</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+1+ function adds one to the argument. See +.
+</p>
+<pre class="example">(1+ 5) =&gt; 6
+(1+ 1234567890123456789) =&gt; 1234567890123456790
+(1+ 1.3) =&gt; 2.3
+(1+ 1.3d0) =&gt; 2.3d0
+(1+ #c(2 4)) =&gt; #C(3 4)
+(1+ 3/4) =&gt; 7/4
+</pre>
+
+ <div class="topbar"><div class="topbarname">1-</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">1-</span><span class="syntaxargs"><span class="syntaxargname">number</span></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">numeric value</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+1- function subtracts one from the argument. See -.
+</p>
+<pre class="example">(1- 5) =&gt; 4
+(1- 1234567890123456789) =&gt; 1234567890123456788
+(1- 1.3) =&gt; 0.29999995
+(1- 1.3d0) =&gt; 0.30000000000000004d0
+(1- #c(2 4)) =&gt; #C(1 4)
+(1- 3/4) =&gt; -1/4
+</pre>
+
+ <div class="topbar"><div class="topbarname">&lt;</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">&lt;</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+&lt; function compares numbers according to "less than" predicate.
+Each (overlapping) pair of the numbers is compared by it. The result
+is true if all compared pairs satisfy comparison. Note that complex
+numbers cannot be compared.
+</p>
+<pre class="example">(&lt; 1 2) =&gt; T
+(&lt; 2 1) =&gt; NIL
+(&lt; 2 2.001) =&gt; T
+(&lt; 2 2) =&gt; NIL
+</pre>
+<pre class="example">(&lt; 1234567890123456789 9876543210987654321) =&gt; T
+(&lt; 1 2 3 4 5) =&gt; T
+(&lt; 1 2 4 3 5) =&gt; NIL
+(&lt; 1 2 4 4 5) =&gt; NIL
+(&lt; 3/4 7/9) =&gt; T
+(&lt; 5) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">&lt;=</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">&lt;=</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+&lt;= function compares numbers according to "less than or equal"
+predicate. Each (overlapping) pair of the numbers is compared by it.
+The result is true if all compared pairs satisfy comparison. Note that
+complex numbers cannot be compared.
+</p>
+<pre class="example">(&lt;= 1 2) =&gt; T
+(&lt;= 2 1) =&gt; NIL
+(&lt;= 2 2.001) =&gt; T
+(&lt;= 2 2) =&gt; T
+</pre>
+<pre class="example">(&lt;= 1234567890123456789 9876543210987654321) =&gt; T
+(&lt;= 1 2 3 4 5) =&gt; T
+(&lt;= 1 2 4 3 5) =&gt; NIL
+(&lt;= 1 2 4 4 5) =&gt; T
+(&lt;= 3/4 7/9) =&gt; T
+(&lt;= 5) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">=</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">=</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+= function compares numbers according to "equal" predicate. Result is
+true if every specified number is equal to each other, otherwise
+result is false.
+</p>
+<pre class="example">(= 1 2) =&gt; NIL
+(= 2 1) =&gt; NIL
+(= 2 2.001) =&gt; NIL
+(= 2 2) =&gt; T
+(= 2 2.0) =&gt; T
+(= 0.0 -0.0) =&gt; T
+(= #c(1.2 4.5) #c(1.2 4.5)) =&gt; T
+</pre>
+<pre class="example">(= 1 2 3 4 5) =&gt; NIL
+(= 4 4 4 3 4) =&gt; NIL
+(= 4 4 4 4 4) =&gt; T
+(= 4 4 4 4.0 4) =&gt; T
+(= 5) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">&gt;</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">&gt;</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+&gt; function compares numbers according to "greater than" predicate.
+Each (overlapping) pair of the numbers is compared by it. The result
+is true if all compared pairs satisfy comparison. Note that complex
+numbers cannot be compared.
+</p>
+<pre class="example">(&gt; 2 1) =&gt; T
+(&gt; 1 2) =&gt; NIL
+(&gt; 2.001 2) =&gt; T
+(&gt; 2 2) =&gt; NIL
+</pre>
+<pre class="example">(&gt; 9876543210987654321 1234567890123456789) =&gt; T
+(&gt; 5 4 3 2 1) =&gt; T
+(&gt; 5 3 4 2 1) =&gt; NIL
+(&gt; 5 4 4 2 1) =&gt; NIL
+(&gt; 7/9 3/4) =&gt; T
+(&gt; 5) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">&gt;=</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">&gt;=</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">numeric values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+&gt;= function compares numbers according to "greater than or equal"
+predicate. Each (overlapping) pair of the numbers is compared by it.
+The result is true if all compared pairs satisfy comparison. Note that
+complex numbers cannot be compared.
+</p>
+<pre class="example">(&gt;= 2 1) =&gt; T
+(&gt;= 1 2) =&gt; NIL
+(&gt;= 2.001 2) =&gt; T
+(&gt;= 2 2) =&gt; T
+</pre>
+<pre class="example">(&gt;= 9876543210987654321 1234567890123456789) =&gt; T
+(&gt;= 5 4 3 2 1) =&gt; T
+(&gt;= 5 3 4 2 1) =&gt; NIL
+(&gt;= 5 4 4 2 1) =&gt; T
+(&gt;= 7/9 3/4) =&gt; T
+(&gt;= 5) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">and</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">and</span><span class="syntaxargs"><span class="syntaxargname">forms</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">forms</td>
+<td class="syntaxargdesc">forms which value is considered</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+AND macro computes logical "and" function. Forms evaluation starts
+from left. Value from the first form that decides result is returned
+so forms at end of argument list may not evaluated.
+</p>
+<pre class="example">(and t t t nil t) =&gt; NIL
+(and t t t t) =&gt; T
+(and) =&gt; T
+</pre>
+<pre class="example">(and (progn (write "SEEN") nil) (progn (write "UNSEEN") t)) =&gt; "SEEN" NIL
+(and 4 5 6) =&gt; 6
+</pre>
+
+ <div class="topbar"><div class="topbarname">ceiling</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">ceiling</span><span class="syntaxargs"><span class="syntaxargname">number</span><span class="syntaxargname">divisor</span></span>
+      =&gt; <span class="syntaxresult">quotient (numeric value), remainder (numeric value)</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">number</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">divisor</td>
+<td class="syntaxargdesc">non-zero real number, default is 1</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+CEILING function returns two values, the first is result of dividing
+number by divisor and truncating toward positive infinity. Second
+result remainder that satisfies equation: quotient * divisor +
+remainder = number.
+</p>
+<pre class="example">(ceiling 10) =&gt; 10, 0
+(ceiling 10.3 2) =&gt; 6, -1.6999998
+(ceiling 3/4) =&gt; 1, -1/4
+</pre>
+<pre class="example">(multiple-value-list (ceiling 20 7)) =&gt; (3 -1)
+</pre>
+
+ <div class="topbar"><div class="topbarname">cos</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">cos</span><span class="syntaxargs"><span class="syntaxargname">number</span></span>
+      =&gt; <span class="syntaxresult">numeric value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">numeric value, angle in radians</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+COS function computes cosine of value in radians.
+</p>
+<pre class="example">(cos 0.0) =&gt; 1.0
+(cos 1.0) =&gt; 0.5403023
+(cos 1.0d0) =&gt; 0.5403023058681398d0
+(cos #c(1.0 1.0)) =&gt; #C(0.83373 -0.9888977)
+</pre>
+
+ <div class="topbar"><div class="topbarname">decf</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">decf</span><span class="syntaxargs"><span class="syntaxargname">place</span><span class="syntaxargname">decrement</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">numeric value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">place</td>
+<td class="syntaxargdesc">place with numeric value</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">decrement</td>
+<td class="syntaxargdesc">numeric value</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+DECF macro modifies a place with numeric value. Its value is
+decremented by decrement number. Default decrement is 1.
+</p>
+<pre class="example">(let ((a 10)) (decf a) a) =&gt; 9
+(let ((a 10)) (decf a 2.3) a) =&gt; 7.7
+(let ((a 10)) (decf a -2.3) a) =&gt; 12.3
+(let ((a (list 10 11 12 13))) (decf (elt a 2) 2.3) a) =&gt; (10 11 9.7 13)
+</pre>
+
+ <div class="topbar"><div class="topbarname">eq</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">eq</span><span class="syntaxargs"><span class="syntaxargname">object1</span><span class="syntaxargname">object2</span></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">object1</td>
+<td class="syntaxargdesc">first object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">object2</td>
+<td class="syntaxargdesc">second object</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+EQ function compares object identity. It works for symbols and
+identical objects. It is not suitable for comparing numbers - see EQL
+and =. Result is true if they are same, otherwise false.
+</p>
+<pre class="example">(eq 'moo 'moo) =&gt; T
+(eq 'moo 'foo) =&gt; NIL
+(eq 1 1) =&gt; T
+(eq 1 2) =&gt; NIL
+(eq 1234567890123456789 1234567890123456789) =&gt; NIL
+</pre>
+<pre class="example">(eq (cons 1 2) (cons 1 2)) =&gt; NIL
+(let ((x (cons 1 2))) (eq x x)) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">eql</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">eql</span><span class="syntaxargs"><span class="syntaxargname">object1</span><span class="syntaxargname">object2</span></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">object1</td>
+<td class="syntaxargdesc">first object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">object2</td>
+<td class="syntaxargdesc">second object</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+EQL function compares object identity, numbers and characters. Numbers
+are considered as equal only when they have the both same value and
+type. Result is true if they are same, otherwise false.
+</p>
+<pre class="example">(eql 'moo 'moo) =&gt; T
+(eql 'moo 'foo) =&gt; NIL
+(eql 1 1) =&gt; T
+(eql 1 2) =&gt; NIL
+(eql 1234567890123456789 1234567890123456789) =&gt; T
+</pre>
+<pre class="example">(eql 1.0 1) =&gt; NIL
+(eql 1.0 1.0) =&gt; T
+</pre>
+<pre class="example">(eql (cons 1 2) (cons 1 2)) =&gt; NIL
+(let ((x (cons 1 2))) (eql x x)) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">equal</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">equal</span><span class="syntaxargs"><span class="syntaxargname">object1</span><span class="syntaxargname">object2</span></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">object1</td>
+<td class="syntaxargdesc">first object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">object2</td>
+<td class="syntaxargdesc">second object</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+EQUAL function compares same things as eql, additionally result is
+true under some other situations: conses are compared recursively (in
+both car and cdr part), string and bit-vectors are compared
+element-wise. Result is true if they are same, otherwise false.
+</p>
+<pre class="example">(equal "moo" "moo") =&gt; T
+(equal "moo" "MoO") =&gt; NIL
+(equal #*1010101 #*1010101) = T
+(equal (vector 2 3 4) (vector 2 3 4)) = NIL
+(equal (cons 1 2) (cons 1 2)) =&gt; T
+(let ((x (cons 1 2))) (equal x x)) =&gt; T
+</pre>
+<pre class="example">(equal 'moo 'moo) =&gt; T
+(equal 'moo 'foo) =&gt; NIL
+(equal 1 1) =&gt; T
+(equal 1 2) =&gt; NIL
+(equal 1234567890123456789 1234567890123456789) =&gt; T
+</pre>
+<pre class="example">(equal 1.0 1) =&gt; NIL
+(equal 1.0 1.0) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">equalp</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">equalp</span><span class="syntaxargs"><span class="syntaxargname">object1</span><span class="syntaxargname">object2</span></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">object1</td>
+<td class="syntaxargdesc">first object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">object2</td>
+<td class="syntaxargdesc">second object</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+EQUALP function compares same things as equal, additionally result is
+true under some other situations: conses are compared recursively (in
+both car and cdr part), any sequence is compared recursively
+(element-wise), strings and characters are compared case insensitively.
+Result is true if they are same, otherwise false.
+</p>
+<pre class="example">(equalp "moo" "moo") =&gt; T
+(equalp "moo" "MoO") =&gt; T
+(equalp "moo" "moo ") =&gt; NIL
+(equalp (vector 2 3 4) (vector 2 3 4)) = T
+(equalp (cons 1 2) (cons 1 2)) =&gt; T
+(let ((x (cons 1 2))) (equalp x x)) =&gt; T
+</pre>
+<pre class="example">(equalp 'moo 'moo) =&gt; T
+(equalp 'moo 'foo) =&gt; NIL
+(equalp "a" 'a) =&gt; NIL
+(equalp 1 1) =&gt; T
+(equalp 1 2) =&gt; NIL
+(equalp 1234567890123456789 1234567890123456789) =&gt; T
+</pre>
+<pre class="example">(equalp 1.0 1) =&gt; T
+(equalp 1.0 1.0) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">exp</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">exp</span><span class="syntaxargs"><span class="syntaxargname">number</span></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">number to be raised</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+EXP function returns e raised to the power number, where e is the base of the natural logarithms.
+</p>
+<pre class="example">(exp 1) =&gt; 2.7182817
+(exp 1.0) =&gt; 2.7182817
+(exp 1.0d0) =&gt; 2.718281828459045d0
+(exp 10) =&gt; 22026.465
+</pre>
+<pre class="example">(log (exp 10)) =&gt; 10.0
+</pre>
+
+ <div class="topbar"><div class="topbarname">expt</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">expt</span><span class="syntaxargs"><span class="syntaxargname">base-number</span><span class="syntaxargname">power-number</span></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">base-number</td>
+<td class="syntaxargdesc">number to be raised</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">power-number</td>
+<td class="syntaxargdesc">number that specifies power</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+EXPT function returns base-number raised to the power-number.
+</p>
+<pre class="example">(expt 2 8) =&gt; 256
+(expt 2 32) =&gt; 4294967296
+(expt 2 64) =&gt; 18446744073709551616
+(expt 10 3) =&gt; 1000
+(expt 5 1/3) =&gt; 1.709976
+(expt 1.709976 3) =&gt; 5.0
+</pre>
+<pre class="example">(expt 1 2) =&gt; 1
+(expt 1.0 2) =&gt; 1.0
+(expt 1.0d0 2) =&gt; 1.0d0
+(expt -2 5) =&gt; -32
+(expt 2 2.5) =&gt; 5.656854
+(expt -2 2.5) =&gt; #C(1.7318549e-15 5.656854)
+(expt 2 -3) =&gt; 1/8
+(expt -2 -3) =&gt; -1/8
+(expt -2.4 -3) =&gt; -0.072337955
+(expt -2.4 -3.3) =&gt; #C(-0.032698035 0.045004968)
+</pre>
+<pre class="example">(expt (expt 10 5) 1/5) =&gt; 10.0
+</pre>
+
+ <div class="topbar"><div class="topbarname">floor</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">floor</span><span class="syntaxargs"><span class="syntaxargname">number</span><span class="syntaxargname">divisor</span></span>
+      =&gt; <span class="syntaxresult">quotient (numeric value), remainder (numeric value)</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">number</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">divisor</td>
+<td class="syntaxargdesc">non-zero real number, default is 1</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+FLOOR function returns two values, the first is result of dividing
+number by divisor and truncating toward negative infinity. Second
+result remainder that satisfies equation: quotient * divisor +
+remainder = number.
+</p>
+<pre class="example">(floor 10) =&gt; 10, 0
+(floor 10.3 2) =&gt; 5, 0.3000002
+(floor 3/4) =&gt; 0, 3/4
+</pre>
+<pre class="example">(multiple-value-list (floor 20 7)) =&gt; (2 6)
+</pre>
+
+ <div class="topbar"><div class="topbarname">incf</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">incf</span><span class="syntaxargs"><span class="syntaxargname">place</span><span class="syntaxargname">increment</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">numeric value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">place</td>
+<td class="syntaxargdesc">place with numeric value</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">increment</td>
+<td class="syntaxargdesc">numeric value</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+INCF macro modifies a place with numeric value. Its value is
+incremented by increment number. Default increment is 1.
+</p>
+<pre class="example">(let ((a 10)) (incf a) a) =&gt; 11
+(let ((a 10)) (incf a 2.3) a) =&gt; 12.3
+(let ((a 10)) (incf a -2.3) a) =&gt; 7.7
+(let ((a (list 10 11 12 13))) (incf (elt a 2) 2.3) a) =&gt; (10 11 14.3 13)
+</pre>
+
+ <div class="topbar"><div class="topbarname">isqrt</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">isqrt</span><span class="syntaxargs"><span class="syntaxargname">number</span></span>
+      =&gt; <span class="syntaxresult">integer value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">positive integer</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+ISQRT function computes integer part of square root of number. See
+also SQRT.
+</p>
+<pre class="example">(isqrt 10) =&gt; 3
+(isqrt 4) =&gt; 2
+</pre>
+
+ <div class="topbar"><div class="topbarname">logand</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">logand</span><span class="syntaxargs"><span class="syntaxargname">integers</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">integer</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">integers</td>
+<td class="syntaxargdesc">integers for bitwise operations</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+LOGIOR function computes bitwise logical "and" function.
+</p>
+<pre class="example">(logand) =&gt; -1
+(logand 1 2) =&gt; 0
+(logand #xff #xaa) =&gt; 170
+(logand #b1010 #b100 #b11) =&gt; 0
+</pre>
+
+ <div class="topbar"><div class="topbarname">logior</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">logior</span><span class="syntaxargs"><span class="syntaxargname">integers</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">integer</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">integers</td>
+<td class="syntaxargdesc">integers for bitwise operations</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+LOGIOR function computes bitwise logical "or" function.
+</p>
+<pre class="example">(logior) =&gt; 0
+(logior 1 2) =&gt; 3
+(logior #xf0 #xf) =&gt; 255
+(logior #b1010 #b100 #b11) =&gt; 15
+</pre>
+
+ <div class="topbar"><div class="topbarname">max</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">max</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">numeric value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">comparable numbers</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+MAX function returns the maximal number from arguments. Type of
+resulting number may be different when arguments multiple precision
+numbers.
+</p>
+<pre class="example">(max 1 3 2) =&gt; 3
+(max 4) =&gt; 4
+(= 3.0 (max 3 1 3.0 2 3.0d0)) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">min</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">min</span><span class="syntaxargs"><span class="syntaxargname">numbers</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">numeric value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">numbers</td>
+<td class="syntaxargdesc">comparable numbers</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+MIN function returns the minimal number from arguments. Type of
+resulting number may be different when arguments multiple precision
+numbers.
+</p>
+<pre class="example">(min 1 3 2) =&gt; 1
+(min 4) =&gt; 4
+(= 3.0 (min 3 7 3.0 8 3.0d0)) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">mod</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">mod</span><span class="syntaxargs"><span class="syntaxargname">number</span><span class="syntaxargname">divisor</span></span>
+      =&gt; <span class="syntaxresult">number</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">real number</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">divisor</td>
+<td class="syntaxargdesc">real number</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MOD function returns modulus of two integer arguments. Non-integer
+arguments are first turned into integers by floor operation. Note that
+division by zero invokes DIVISION-BY-ZERO condition.
+</p>
+<pre class="example">(mod -1 5) =&gt; 4                                                              
+(mod 13 4) =&gt; 1                                                              
+(mod -13 4) =&gt; 3                                                             
+(mod 13 -4) =&gt; -3                                                            
+(mod -13 -4) =&gt; -1                                                           
+(mod 13.4 1) =&gt; 0.4                                                          
+(mod -13.4 1) =&gt; 0.6                                                         
+</pre>
+
+ <div class="topbar"><div class="topbarname">nil</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: symbol</div>
+</div>
+<span class="syntaxname">nil</span><span class="syntaxargs"></span>
+      =&gt; <span class="syntaxresult">symbol</span>
+</div>
+<p class="comment">
+NIL symbol denotes empty list and false value. There is also
+ubiquitous NIL constant which contains NIL symbol. NIL is considered
+as false value by comparison functions and control operators (unlike
+any other). Empty list, that is '() or even (), is the same as NIL
+value.
+</p>
+<pre class="example">nil =&gt; NIL
+'nil =&gt; NIL
+() =&gt; NIL
+'() =&gt; NIL
+</pre>
+<pre class="example">(eq nil 'nil) =&gt; T
+(eq 'nil ()) =&gt; T
+(eq () '()) =&gt; T
+</pre>
+<pre class="example">(not t) =&gt; NIL
+(not nil) =&gt; T
+(not 234.3) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">not</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">not</span><span class="syntaxargs"><span class="syntaxargname">value</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">value</td>
+<td class="syntaxargdesc">logical value</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+NOT computes logical negation. Note that any other value than NIL is
+considered as true. NOT is identical to NULL, but used in conjunction
+with boolean logic processing unlike NOT which is used in list
+processing.
+</p>
+<pre class="example">(not t) =&gt; NIL
+(not nil) =&gt; T
+(not 234.3) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">or</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">or</span><span class="syntaxargs"><span class="syntaxargname">forms</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">forms</td>
+<td class="syntaxargdesc">forms which value is considered</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+OR macro computes logical "or" function. Forms evaluation starts from
+left. Value from the first form that decides result is returned so
+forms at end of argument list may not evaluated.
+</p>
+<pre class="example">(or t t t nil t) =&gt; T
+(or nil nil nil) =&gt; NIL
+(or) =&gt; NIL
+</pre>
+<pre class="example">(or (progn (write "SEEN") 123) (progn (write "UNSEEN") t)) =&gt; "SEEN" 123
+(or 4 5 6) =&gt; 4
+</pre>
+
+ <div class="topbar"><div class="topbarname">random</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">random</span><span class="syntaxargs"><span class="syntaxargname">limit</span><span class="syntaxargname">random-state</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">numeric value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">limit</td>
+<td class="syntaxargdesc">positive number, integer or real</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">random-state</td>
+<td class="syntaxargdesc">object representing random state</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+RANDOM function generates random numbers. For integer argument N,
+result is integer between zero (including) and N (excluding). For real
+argument X, result is real between zero (including) and X (excluding).
+All generated numbers have approximately same probability. Default
+value for random-state is stored in *random-state* global variable.
+</p>
+<pre class="example">(&lt;= 0 (random 20) 19) =&gt; T
+(let ((x (random 1.0))) (or (= x 0) (&lt; 0 x 1.0))) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">round</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">round</span><span class="syntaxargs"><span class="syntaxargname">number</span><span class="syntaxargname">divisor</span></span>
+      =&gt; <span class="syntaxresult">quotient (numeric value), remainder (numeric value)</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">number</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">divisor</td>
+<td class="syntaxargdesc">non-zero real number, default is 1</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+FLOOR function returns two values, the first is result of dividing
+number by divisor and truncating toward nearest even integer. Second
+result remainder that satisfies equation: quotient * divisor +
+remainder = number.
+</p>
+<pre class="example">(round 10) =&gt; 10, 0
+(round 10.3 2) =&gt; 5, 0.3000002
+(round 3/4) =&gt; 0, 3/4
+(round 3/2) =&gt; 2, -1/2
+</pre>
+<pre class="example">(multiple-value-list (round 20 7)) =&gt; (3 -1)
+</pre>
+
+ <div class="topbar"><div class="topbarname">sin</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">sin</span><span class="syntaxargs"><span class="syntaxargname">number</span></span>
+      =&gt; <span class="syntaxresult">numeric value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">numeric value, angle in radians</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+SIN function computes sine of value in radians.
+</p>
+<pre class="example">(sin 0.0) =&gt; 0.0
+(sin 1.0) =&gt; 0.84147096
+(sin 1.0d0) =&gt; 0.8414709848078965d0
+(sin #c(1.0 1.0)) =&gt; #C(1.2984576 0.63496387)
+</pre>
+
+ <div class="topbar"><div class="topbarname">sqrt</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">sqrt</span><span class="syntaxargs"><span class="syntaxargname">number</span></span>
+      =&gt; <span class="syntaxresult">numeric value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">number</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+SQRT function computes square root of number. Number may be integer,
+real or complex. See also ISQRT.
+</p>
+<pre class="example">(sqrt 10) =&gt; 3.1622777
+(sqrt 10.0) =&gt; 3.1622777
+(sqrt 10.0d0) =&gt; 3.1622776601683795d0
+(sqrt 4) =&gt; 2.0
+</pre>
+<pre class="example">(sqrt -4) =&gt; #C(0.0 2.0)
+(sqrt #C(0.0 2.0)) =&gt; #C(1.0 1.0)
+</pre>
+
+ <div class="topbar"><div class="topbarname">t</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: symbol</div>
+</div>
+<span class="syntaxname">t</span><span class="syntaxargs"></span>
+      =&gt; <span class="syntaxresult">symbol</span>
+</div>
+<p class="comment">
+T symbol denotes true value. There is also ubiquitous T constant which
+contains T symbol. T is not only true value, all values except NIL are
+treat as true by comparison functions and control operators. Note that
+constants cannot be redefined (even locally) so there is no chance to
+make variable t in same name space with T (the true symbol).
+</p>
+<pre class="example">'t =&gt; T
+t =&gt; T
+(eq 't t) =&gt; T
+</pre>
+<pre class="example">(not t) =&gt; NIL
+(not nil) =&gt; T
+(not 234.3) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">zerop</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">zerop</span><span class="syntaxargs"><span class="syntaxargname">number</span></span>
+      =&gt; <span class="syntaxresult">boolean</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">number</td>
+<td class="syntaxargdesc">a number</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+ZEROP function returns true if the argument is zero.
+</p>
+<pre class="example">(zerop 0) =&gt; T
+(zerop -0.0) =&gt; T
+(zerop #c(0 0.0)) =&gt; T
+(zerop #c(0 0.1)) =&gt; NIL
+(zerop 3/3) =&gt; NIL
+</pre>
+
+ </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_cons">Conses, Lists and related functions</div>
+<div class="categoryinside">
+<div class="topbar"><div class="topbarname">append</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">append</span><span class="syntaxargs"><span class="syntaxargname">list</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">lists to be concatenated</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+APPEND function concatenates list arguments into one list. Resulting
+list is shallow copy of specified lists except for the last which is
+directly shared. See also MAPCAN, CONS, LIST, LIST*.
+</p>
+<pre class="example">(append) =&gt; NIL
+(append '(1 2 3)) =&gt; (1 2 3)
+(append '(1 2 3) '(4 5 6)) =&gt; (1 2 3 4 5 6)
+(append '(1 2 3) '(4 5 6) '(7 8 9)) =&gt; (1 2 3 4 5 6 7 8 9)
+(let ((x '(tail list))) (eq x (cddr (append '(front list) x)))) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">assoc</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">assoc</span><span class="syntaxargs"><span class="syntaxargname">item</span><span class="syntaxargname">alist</span><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">cons cell or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">item</td>
+<td class="syntaxargdesc">a key object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">alist</td>
+<td class="syntaxargdesc">alist - list of cons cell with key-value pairs</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting key before test</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function key and item comparison</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+ASSOC function searches supplied list for cons cell that have item as
+car part. Return value is the cell with key-value pair which key
+matched testing conditions, otherwise NIL. Default comparison operator
+is EQL.
+</p>
+<p class="comment">
+Associative list, or for short alist, is a list with key-value pairs
+in cons cells. That is ((key1 . value1) (key2 . value2) ...)
+</p>
+<pre class="example">(assoc 'a '((a . 1) (b . 2) (c . 3))) =&gt; (A . 1)
+(assoc 'x '((a . 1) (b . 2) (c . 3))) =&gt; NIL
+(assoc 'b '((a . 1) (b . 2) (c . 3) (b . 4))) =&gt; (B . 2)
+(assoc "b" '(("a" . 1) ("b" . 2))) =&gt; NIL
+(assoc "b" '(("a" . 1) ("b" . 2)) :test #'equal) =&gt; ("b" . 2)
+(assoc 7 '((6 . a) (9 . b)) :key #'1+) =&gt; (6 . A)
+(assoc 5 nil) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">butlast</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">butlast</span><span class="syntaxargs"><span class="syntaxargname">list</span><span class="syntaxargname">n</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">a list</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">n</td>
+<td class="syntaxargdesc">a non-negative integer, default is 1</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+BUTLAST function returns the argument list copy without N last elements. See LAST.
+</p>
+<pre class="example">(butlast '(1 2 3)) =&gt; (1 2)
+</pre>
+<pre class="example">(butlast '(1 2 3) 0) =&gt; (1 2 3)
+(butlast '(1 2 3) 1) =&gt; (1 2)
+(butlast '(1 2 3) 2) =&gt; (1)
+(butlast '(1 2 3) 3) =&gt; NIL
+(butlast '(1 2 3) 4) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">car</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">car</span><span class="syntaxargs"><span class="syntaxargname">list</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">cons or full list</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+CAR function returns the first element of list, that is the car part
+of its cons cell argument. CAR is identical to FIRST.
+</p>
+<pre class="example">(car '(1 2 3)) =&gt; 1
+(car (cons 'a 'b)) =&gt; A
+(car (cons '(1 2 3) '(a b c))) =&gt; (1 2 3)
+(car '()) =&gt; NIL
+(car nil) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">cddr</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">cddr</span><span class="syntaxargs"><span class="syntaxargname">list</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">cons or full list</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+CDDR function is composition of two CDR functions. That is, (CDDR X)
+is same as (CDR (CDR X)). There are other CAR and CDR combinations,
+see HyperSpec, CAR and CDR.
+</p>
+<pre class="example">(cddr '(1 2 3 4)) =&gt; (3 4)
+(cddr '(1 2 . x)) =&gt; X
+(cddr '(1 . nil)) =&gt; NIL
+(cddr nil) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">cdr</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">cdr</span><span class="syntaxargs"><span class="syntaxargname">list</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">cons or full list</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+CDR function returns cdr part of cell in the argument, that is list of
+all elements but first. CDR is identical to REST.
+</p>
+<pre class="example">(cdr '(1 2 3)) =&gt; (2 3)
+(cdr (cons 'a 'b)) =&gt; B
+(cdr (cons '(1 2 3) '(a b c))) =&gt; (A B C)
+(cdr '()) =&gt; NIL
+(cdr nil) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">cons</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">cons</span><span class="syntaxargs"><span class="syntaxargname">car-part</span><span class="syntaxargname">car-part</span></span>
+      =&gt; <span class="syntaxresult">cons cell</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">car-part</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">car-part</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+CONS function make new cons object. The cons cell contains exactly two
+values. The first is named car, the second is named cdr. These cells
+are used to create one-way linked lists. See also CAR, CDR and LIST.
+</p>
+<p class="comment">
+These names come from historical names "Contents of Address part of
+Register" and "Contents of Decrement part of Register".
+</p>
+<pre class="example">(cons 1 2) =&gt; (1 . 2)
+(cons 1 (cons 2 (cons 3 nil))) =&gt; (1 2 3)
+(cons 1 (cons 2 (cons 3 'x))) =&gt; (1 2 3 . X)
+(cons (cons (cons 'a 'b) 'c) 'd) =&gt; (((A . B) . C) . D)
+(car (cons 1 2)) =&gt; 1
+(cdr (cons 1 2)) =&gt; 2
+</pre>
+
+ <div class="topbar"><div class="topbarname">consp</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">consp</span><span class="syntaxargs"><span class="syntaxargname">object</span></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">object</td>
+<td class="syntaxargdesc">an object</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+CONSP function returns true if the argument refers to cons cell,
+otherwise it returns false. See CONS and LIST.
+</p>
+<pre class="example">(consp nil) =&gt; NIL
+(consp 'some-symbol) =&gt; NIL
+(consp 3) =&gt; NIL
+(consp "moo") =&gt; NIL
+(consp (cons 1 2)) =&gt; T
+(consp '(1 . 2)) =&gt; T
+(consp '(1 2 3 4)) =&gt; T
+(consp (list 1 2 3 4)) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">first</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">first</span><span class="syntaxargs"><span class="syntaxargname">list</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">cons or full list</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+FIRST function returns the first element of list, that is the car part
+of its cons cell argument. FIRST is identical to CAR.
+</p>
+<pre class="example">(first '(1 2 3)) =&gt; 1
+(first (cons 'a 'b)) =&gt; A
+(first (cons '(1 2 3) '(a b c))) =&gt; (1 2 3)
+(first '()) =&gt; NIL
+(first nil) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">getf</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">getf</span><span class="syntaxargs"><span class="syntaxargname">place</span><span class="syntaxargname">key</span><span class="syntaxargname">default</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">place</td>
+<td class="syntaxargdesc">a place with list</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">keying value, also know as indicator</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">default</td>
+<td class="syntaxargdesc">answer when key-value pair is not found, default is NIL</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+GETF function searches supplied plist for value with matching
+key. Plist is list of even number of items. Each item pair specifies
+key and value. I.e. (K1 V1 K2 V2 ...). Return value is either value
+for first matching key, or specified default. Keys are matched by EQ
+function, therefore only suitable values are symbols and integers in
+range between MOST-NEGATIVE-FIXNUM and MOST-POSITIVE-FIXNUM constants.
+See also SETF, ASSOC and FIND.
+</p>
+<pre class="example">(getf '(a b 4 d a x) 'a) =&gt; B
+(getf '(a b 4 d a x) 'x) =&gt; NIL
+(getf '(a b 4 d a x) 'x 'not-found) =&gt; NOT-FOUND
+(getf '(a b 4 d a x) 4 'not-found) =&gt; D
+</pre>
+
+  <div class="topbar"><div class="topbarname">last</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">last</span><span class="syntaxargs"><span class="syntaxargname">list</span><span class="syntaxargname">n</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">a list</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">n</td>
+<td class="syntaxargdesc">a non-negative integer, default is 1</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+LAST function returns the list of N last elements of list argument. See BUTLAST.
+</p>
+<pre class="example">(last '(1 2 3)) =&gt; (3)
+</pre>
+<pre class="example">(last '(1 2 3) 0) =&gt; NIL
+(last '(1 2 3) 1) =&gt; (3)
+(last '(1 2 3) 2) =&gt; (2 3)
+(last '(1 2 3) 3) =&gt; (1 2 3)
+(last '(1 2 3) 4) =&gt; (1 2 3)
+(last '(a . b) 0) =&gt; B
+(last '(a . b) 1) =&gt; (A . B)
+(last '(a . b) 2) =&gt; (A . B)
+</pre>
+
+ <div class="topbar"><div class="topbarname">list</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">list</span><span class="syntaxargs"><span class="syntaxargname">list</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">list of objects</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+LIST function makes new list from arguments.
+</p>
+<pre class="example">(list 1 2 3) =&gt; (1 2 3)
+(list 'a #c(1 2) "moo") =&gt; (A #C(1 2) "moo")
+(car (list 1 2 3)) =&gt; 1
+(cdr (list 1 2 3)) =&gt; (2 3)
+(list) =&gt; NIL
+(eq (list) nil) =&gt; T
+(eq (list) '()) =&gt; T
+(equal (list 1) (cons 1 nil)) =&gt; T
+(equal (list 1 'a) (cons 1 (cons 'a nil))) =&gt; T
+(equal (list 1 'a 3) (cons 1 (cons 'a (cons 3 nil)))) =&gt; T
+(equal (list 1 'a 3) '(1 . (a . (3 . nil)))) =&gt; T
+(equal '(1 2 3) (list 1 2 3)) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">list-length</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">list-length</span><span class="syntaxargs"><span class="syntaxargname">list</span></span>
+      =&gt; <span class="syntaxresult">integer or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">list or cyclic list</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+LIST-LENGTH function computes length of the lists. LIST-LENGTH will
+return NIL if it encounters cyclic cons cell structure. LIST-LENGTH is
+slower than LENGTH because of additional cycle checking.
+</p>
+<pre class="example">(list-length '(a . (b . nil))) =&gt; 2
+(list-length '#1=(a . (b . #1#))) =&gt; NIL
+</pre>
+<pre class="example">(list-length (list 'a 'b 'c)) =&gt; 3
+(list-length nil) =&gt; 0
+(list-length (cons "moo" nil)) =&gt; 1
+(list-length (cons "moo" (cons "boo" nil))) =&gt; 2
+</pre>
+
+ <div class="topbar"><div class="topbarname">listp</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">listp</span><span class="syntaxargs"><span class="syntaxargname">object</span></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">object</td>
+<td class="syntaxargdesc">an object</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+LISTP function returns true if the argument is refers to object of
+type list; otherwise it returns false. Objects of list type can
+contain cons cells or NIL value (list terminator). See CONS, CONSP and
+LIST.
+</p>
+<pre class="example">(listp nil) =&gt; T
+(listp 'some-symbol) =&gt; NIL
+(listp 3) =&gt; NIL
+(listp "moo") =&gt; NIL
+(listp (cons 1 2)) =&gt; T
+(listp '(1 . 2)) =&gt; T
+(listp '(1 2 3 4)) =&gt; T
+(listp (list 1 2 3 4)) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">mapc</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">mapc</span><span class="syntaxargs"><span class="syntaxargname">fn</span><span class="syntaxargname">lists</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">the first list from lists argument</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">function that takes as many arguments as there are lists</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">lists</td>
+<td class="syntaxargdesc">lists which elements are processed in parallel</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAPC applies function FN to elements of lists with same index. Each
+application result forgotten. Elemnts are processed only up to length
+of the shortest list argument.
+See MAPCAR, MAPCAN, MAPCON, DOLIST.
+</p>
+<pre class="example">(setq dummy nil) =&gt;  NIL
+(mapc #'(lambda (&amp;rest x) (setq dummy (append dummy x)))
+      '(1 2 3 4)
+      '(a b c d e)
+      '(x y z)) =&gt;  (1 2 3 4)
+dummy =&gt; (1 A X 2 B Y 3 C Z)
+</pre>
+
+ <div class="topbar"><div class="topbarname">mapcan</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">mapcan</span><span class="syntaxargs"><span class="syntaxargname">fn</span><span class="syntaxargname">lists</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">function that takes as many arguments as there are lists</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">lists</td>
+<td class="syntaxargdesc">lists which elements are processed in parallel</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAPCAN applies function FN to elements of lists with same index. Each
+application result is concatenated into resulting list. See MAPCAR.
+</p>
+<pre class="example">(mapcan (lambda (x) (list (+ x 10) 'x)) '(1 2 3 4)) =&gt; (11 X 12 X 13 X 14 X)
+</pre>
+<pre class="example">(mapcan #'list '(a b c d)) =&gt; (A B C D)
+</pre>
+<pre class="example">(mapcan (lambda (x) (if (&gt; x 0) (list x) nil)) '(-4 6 -23 1 0 12 )) =&gt; (6 1 12)
+</pre>
+
+ <div class="topbar"><div class="topbarname">mapcar</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">mapcar</span><span class="syntaxargs"><span class="syntaxargname">fn</span><span class="syntaxargname">lists</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">function that takes as many arguments as there are lists</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">lists</td>
+<td class="syntaxargdesc">lists which elements are processed in parallel</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAPCAR applies function FN to elements of lists with same index. Each
+application result is put into resulting list. Length of resulting
+list is the length of the shortest list argument. See MAPCAN.
+</p>
+<pre class="example">(mapcar (lambda (x) (+ x 10)) '(1 2 3 4)) =&gt; (11 12 13 14)
+</pre>
+<pre class="example">(mapcar #'round '(1.3 2.7 3.4 4.5)) =&gt; (1 3 3 4)
+</pre>
+<pre class="example">(mapcar #'list '(123 symbol "string" 345) '(1 2 3)) =&gt; ((123 1) (SYMBOL 2) ("string" 3))
+</pre>
+<pre class="example">(mapcar #'* '(3 4 5) '(4 5 6)) =&gt; (12 20 30)
+</pre>
+
+ <div class="topbar"><div class="topbarname">mapcon</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">mapcon</span><span class="syntaxargs"><span class="syntaxargname">fn</span><span class="syntaxargname">lists</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">function that takes as many arguments as there are lists</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">lists</td>
+<td class="syntaxargdesc">lists which elements are processed in parallel</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAPCON applies function FN to the successive cdr of lists. Each
+application result is DESTRUCTIVELY concatenated into resulting list.
+In case of FN results that are fresh lists (non-sharing), the result
+is same as with (APPLY #'APPEND (MAPLIST ...)).
+See MAPCAR, MAPCAN, MAPCON, MAP, MAPC.
+</p>
+<pre class="example">(mapcon (lambda (x) (list 'start x 'end)) '(1 2 3 4))
+=&gt; (START (1 2 3 4) END START (2 3 4) END START (3 4) END START (4) END)
+</pre>
+
+ <div class="topbar"><div class="topbarname">maplist</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">maplist</span><span class="syntaxargs"><span class="syntaxargname">fn</span><span class="syntaxargname">lists</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">function that takes as many arguments as there are lists</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">lists</td>
+<td class="syntaxargdesc">lists which elements are processed in parallel</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAPLIST applies function FN to the successive cdr of lists. Each
+application result is concatenated into resulting list.
+See MAPCAR, MAPCAN, MAPCON, MAP, MAPC.
+</p>
+<pre class="example">(maplist (lambda (x) (list 'start x 'end)) '(1 2 3 4))
+=&gt; ((START (1 2 3 4) END) (START (2 3 4) END) (START (3 4) END) (START (4) END))
+</pre>
+
+ <div class="topbar"><div class="topbarname">member</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">member</span><span class="syntaxargs"><span class="syntaxargname">item</span><span class="syntaxargname">list</span><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">tail or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">item</td>
+<td class="syntaxargdesc">an item to be found</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">a list to be searched</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function key and item comparison</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting value before test</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MEMBER function searches a list for the first occurrence of an element
+(item) satisfying the test. Return value is tail of the list starting
+from found element or NIL when item is not found. See also MEMBER-IF,
+POSITION, POSITION-IF, FIND and FIND-IF.
+</p>
+<pre class="example">(member 1 '(0 1 0 0 0 1 0)) =&gt; (1 0 0 0 1 0)
+(member 2 '(0 1 0 0 0 1 0)) =&gt; NIL
+(member #\h '(#\H #\o #\l #\a)) =&gt; NIL
+(member #\h '(#\H #\o #\l #\a) :test #'char-equal) =&gt; (#\H #\o #\l #\a)
+(member #\h '(#\H #\o #\l #\a) :key #'char-downcase) =&gt; (#\H #\o #\l #\a)
+</pre>
+
+ <div class="topbar"><div class="topbarname">null</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">null</span><span class="syntaxargs"><span class="syntaxargname">object</span></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">object</td>
+<td class="syntaxargdesc">an object</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+NULL function returns true if the argument is NIL, otherwise it
+returns false. NULL is identical to NOT, but used in conjunction with
+list processing unlike NOT which is used in boolean logic processing.
+</p>
+<pre class="example">(null '()) =&gt; T
+(null '(1 2 3)) =&gt; NIL
+(null nil) =&gt; T
+(null t) =&gt; NIL
+(null 234.4) =&gt; NIL
+(null "lisp") =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">pop</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">pop</span><span class="syntaxargs"><span class="syntaxargname">place</span></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">place</td>
+<td class="syntaxargdesc">a place containing list</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+POP macro modifies variable or generally place. It replaces the cons
+cell value with its cdr. Effectively it removes first element of the
+list found at the place. Result is the first element of the original
+list. See also PUSH, PUSH-NEW and ACONS.
+</p>
+<pre class="example">(let ((x '(1 2 3))) (pop x)) =&gt; 1
+(let ((x '(1 2 3))) (pop x) x) =&gt; (2 3)
+(let ((x '((a b c) (3 2 1) (e f g)))) (pop (second x)) x) =&gt; ((A B C) (2 1) (E F G))
+(let ((x '())) (pop x) x) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">push</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">push</span><span class="syntaxargs"><span class="syntaxargname">item</span><span class="syntaxargname">place</span></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">item</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">place</td>
+<td class="syntaxargdesc">a place which can contain any object, but usually list</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+PUSH macro modifies variable or generally place. It makes a new cons
+cell filled with item as car and previous value as cdr, that is
+effectively prepends new item to list found at the place. See also
+PUSH-NEW, ACONS and POP.
+</p>
+<pre class="example">(let ((x 'x)) (push 4 x) x) =&gt; (4 . X)
+(let ((x '(3 2 1))) (push 4 x) x) =&gt; (4 3 2 1)
+(let ((x '((a b c) (3 2 1) (e f g)))) (push 4 (second x)) x) =&gt; ((A B C) (4 3 2 1) (E F G))
+</pre>
+
+ <div class="topbar"><div class="topbarname">pushnew</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">pushnew</span><span class="syntaxargs"><span class="syntaxargname">item</span><span class="syntaxargname">place</span><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">item</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">place</td>
+<td class="syntaxargdesc">a place which can contain any object, but usually list</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting value before test</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function key and item comparison</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+PUSHNEW macro modifies variable or generally place. It conditionally
+makes a new cons cell filled with item as car and previous value as
+cdr, that is effectively prepends new item to list found at the place.
+New element is pushed only when it does not appear in place. Test
+argument specifies comparison operator. Default comparison operator is
+EQL. Key argument specifies function for extracting relevant value
+from list items. Default key is IDENTITY. See also PUSH-NEW, ACONS and
+POP.
+</p>
+<pre class="example">(let ((x 'x)) (pushnew 4 x) x) =&gt; (4 . X)
+(let ((x '(3 2 1))) (pushnew 4 x) x) =&gt; (4 3 2 1)
+(let ((x '(3 2 1))) (pushnew 3 x) x) =&gt; (3 2 1)
+(let ((x '((a b c) (3 2 1) (e f g)))) (pushnew 4 (second x)) x) =&gt; ((A B C) (4 3 2 1) (E F G))
+(let ((x '((a b c) (3 2 1) (e f g)))) (pushnew 3 (second x)) x) =&gt; ((A B C) (3 2 1) (E F G))
+(let ((x '("3" "2" "1"))) (pushnew "3" x) x) =&gt; (3 2 1)
+(let ((x '("31" "24" "13"))) (pushnew "44" x :key (lambda (x) (elt x 0))) x) =&gt; ("44" "31" "24" "13")
+(let ((x '("31" "24" "13"))) (pushnew "44" x :key (lambda (x) (elt x 1))) x) =&gt; ("31" "24" "13")
+</pre>
+
+ <div class="topbar"><div class="topbarname">rest</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">rest</span><span class="syntaxargs"><span class="syntaxargname">list</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">cons or full list</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+REST function returns list of all elements but first, that is cdr part
+of argument. REST is identical to CDR.
+</p>
+<pre class="example">(rest '(1 2 3)) =&gt; (2 3)
+(rest (cons 'a 'b)) =&gt; B
+(rest (cons '(1 2 3) '(a b c))) =&gt; (A B C)
+(rest '()) =&gt; NIL
+(rest nil) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">rplaca</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">rplaca</span><span class="syntaxargs"><span class="syntaxargname">cons</span><span class="syntaxargname">object</span></span>
+      =&gt; <span class="syntaxresult">cons</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">cons</td>
+<td class="syntaxargdesc">a cons cell</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">object</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+RPLACA function changes CAR part of CONS cell to specified value.
+See RPLACD, SETF, CONS.
+</p>
+<p class="comment">
+This can be also writen as (SETF (CAR cons) object).
+</p>
+<pre class="example">(let ((my-list (list 5 3 6 2))) (rplaca my-list 'bla) my-list) =&gt; (BLA 3 6 2)
+</pre>
+
+ <div class="topbar"><div class="topbarname">rplacd</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">rplacd</span><span class="syntaxargs"><span class="syntaxargname">cons</span><span class="syntaxargname">object</span></span>
+      =&gt; <span class="syntaxresult">cons</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">cons</td>
+<td class="syntaxargdesc">a cons cell</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">object</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+RPLACD function changes CDR part of CONS cell to specified value.
+See RPLACA, SETF, CONS.
+</p>
+<p class="comment">
+This can be also writen as (SETF (CDR cons) object).
+</p>
+<pre class="example">(let ((my-list (list 5 3 6 2))) (rplaca (cdr my-list) '(x y)) my-list) =&gt; (5 (X Y) 6 2)
+</pre>
+
+ <div class="topbar"><div class="topbarname">second</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">second</span><span class="syntaxargs"><span class="syntaxargname">list</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">cons or full list</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+SECOND function returns second element of list, that is car part of
+cdr part of its cons cell. SECOND is identical to CADR.
+</p>
+<pre class="example">(second '(1 2 3)) =&gt; 2
+(second (cons 'a (cons 'b 'c))) =&gt; B
+</pre>
+
+ <div class="topbar"><div class="topbarname">set-difference</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">set-difference</span><span class="syntaxargs"><span class="syntaxargname">list1</span><span class="syntaxargname">list2</span><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">list1</td>
+<td class="syntaxargdesc">a list</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">list2</td>
+<td class="syntaxargdesc">a list</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting value before test</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function key and item comparison</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+SET-DIFFERENCE function computes set difference, that is a list of
+elements that appear in list1 but do not appear in list2. Test
+argument specifies comparison operator. Default comparison operator is
+EQL. Key argument specifies function for extracting relevant value
+from list items. Default key is IDENTITY. Resulting item order is not
+specified. See also SET-EXCLUSIVE-OR, UNION and INTERSECTION.
+</p>
+<pre class="example">(set-difference '(a b c) '(b c d)) =&gt; (A)
+(set-difference '("a" "b" "c") '("b" "c" "d")) =&gt; ("c" "b" "a")
+(set-difference '("a" "b" "c") '("b" "c" "d") :test #'equal) =&gt; ("a")
+(set-difference '((a . 2) (b . 3) (c . 1)) '((b . 1) (c . 2) (d . 4)) :test #'equal) =&gt; ((C . 1) (B . 3) (A . 2))
+(set-difference '((a . 2) (b . 3) (c . 1)) '((b . 1) (c . 2) (d . 4)) :key #'car) =&gt; ((A . 2))
+(set-difference '((a . 2) (b . 3) (c . 1)) '((b . 1) (c . 2) (d . 4)) :key #'cdr) =&gt; ((B . 3))
+</pre>
+
+ <div class="topbar"><div class="topbarname">union</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">union</span><span class="syntaxargs"><span class="syntaxargname">list-1</span><span class="syntaxargname">list-2</span><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test-not</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">list</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">list-1</td>
+<td class="syntaxargdesc">list to be joined</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">list-2</td>
+<td class="syntaxargdesc">other list to be joined</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting value before test</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function for comparison of two values</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test-not</td>
+<td class="syntaxargdesc">function for comparison of two values</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+UNION function computes union of two lists.
+Resulting list contains elements that appear in one or other list.
+See INTERSECTION, SET-DIFFERENCE, SET-EXCLUSIVE-OR.
+</p>
+<pre class="example">(union '(1 2 3) '(2 3 4)) =&gt; (1 2 3 4)
+(union '((1) (2) (3)) '((2) (3) (4))) =&gt; ((3) (2) (1) (2) (3) (4))
+(union '((1) (2) (3)) '((2) (3) (4)) :test #'equal) =&gt; ((1) (2) (3) (4))
+(union '((1) (2) (3)) '((2) (3) (4)) :key #'first) =&gt; ((1) (2) (3) (4))
+</pre>
+
+ </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_sequence">Sequences (Lists, Strings) and Arrays</div>
+<div class="categoryinside">
+<div class="topbar"><div class="topbarname">aref</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">aref</span><span class="syntaxargs"><span class="syntaxargname">array</span><span class="syntaxargname">subscripts</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">element</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">array</td>
+<td class="syntaxargdesc">an array</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">subscripts</td>
+<td class="syntaxargdesc">a list of valid array indices</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+AREF function accesses specified elements of arrays. Every array index
+is counted from zero. Accessing out-of-bounds indices signals
+condition, or causes crash and/or undefined behavior, depending on
+compilation safety mode. Note that vectors (including strings which
+are special vectors) are treated as one dimensional arrays so aref
+works on them too.
+</p>
+<p class="comment">
+AREF with conjunction of SETF may be used to set array elements.
+</p>
+<pre class="example">(aref "hola" 0) =&gt; #\h
+(aref "hola" 3) =&gt; #\a
+(aref #(5 3 6 8) 1) =&gt; 3
+(aref (make-array '(10 10) :initial-element 'moo) 9 9) =&gt; MOO
+</pre>
+<pre class="example">(let ((a (make-array '(3 3) :initial-element 'moo))) (setf (aref a 1 1) 'x) a) =&gt; #2A((MOO MOO MOO) (MOO X MOO) (MOO MOO MOO))
+</pre>
+
+ <div class="topbar"><div class="topbarname">concatenate</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">concatenate</span><span class="syntaxargs"><span class="syntaxargname">result-type</span><span class="syntaxargname">seqs</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">sequence</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">result-type</td>
+<td class="syntaxargdesc">sequence type specifier or NIL</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">seqs</td>
+<td class="syntaxargdesc">sequences</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+CONCATENATE creates new sequence and fills it with data from
+arguments. See also MAPCAN.
+</p>
+<pre class="example">(concatenate 'string "hello" " " "world") =&gt; "hello world"
+(concatenate 'list "hello" " " "world") =&gt; (#\h #\e #\l #\l #\o #\  #\w #\o #\r #\l #\d)
+(concatenate 'vector "hello" " " "world") =&gt; #(#\h #\e #\l #\l #\o #\  #\w #\o #\r #\l #\d)
+(concatenate 'vector '(1 2) '(3 4)) =&gt; #(1 2 3 4)
+</pre>
+
+ <div class="topbar"><div class="topbarname">copy-seq</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">copy-seq</span><span class="syntaxargs"><span class="syntaxargname">seq</span></span>
+      =&gt; <span class="syntaxresult">sequence</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">seq</td>
+<td class="syntaxargdesc">a sequence</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+COPY-SEQ function makes new sequence copy from old sequence.
+Note that there is no COPY-ARRAY function, but it can be emulated by this tricky code bellow:
+</p>
+<pre class="example">(defun copy-array (array)
+ (let ((dims (array-dimensions array)))
+   (adjust-array
+    (make-array dims :displaced-to array)
+    dims)))
+</pre>
+<pre class="example">(let ((a "hello world")) (eq a (copy-seq a))) =&gt; NIL
+(let ((a "hello world")) (equal a (copy-seq a))) =&gt; T
+</pre>
+
+ <div class="topbar"><div class="topbarname">count</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">count</span><span class="syntaxargs"><span class="syntaxargname">item</span><span class="syntaxargname">sequence</span><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">from-end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">start</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test-not</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">integer</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">item</td>
+<td class="syntaxargdesc">an item to be found</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">sequence</td>
+<td class="syntaxargdesc">a sequence to be searched</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function key and item comparison</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">from-end</td>
+<td class="syntaxargdesc">direction of search, default is NIL - forward</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">starting position for search, default is 0</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">final position for search, default is NIL - end of sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting value before test</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function for comparison of two values</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test-not</td>
+<td class="syntaxargdesc">function for comparison of two values</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+COUNT function counts specified elements in sequence.
+Return value is number of occurancesf or NIL if no occurance is not found. See also
+COUNT-IF, POSITION, POSITION-IF, FIND, FIND-IF and MEMBER.
+</p>
+<pre class="example">(count #\s "Some sequence") =&gt; 1
+(count #\s "Some sequence" :key #'char-downcase) =&gt; 2
+(count #\s "Some sequence" :key #'char-downcase :start 1) =&gt; 1
+(count #\x "Some sequence") =&gt; 0
+(count '(1 2) #(9 3 (1 2) 6 7 8)) =&gt; 0
+(count '(1 2) #(9 3 (1 2) 6 7 8) :test #'equal) =&gt; 1
+(count 1 #(0 1 0 0 0 1 0) :from-end t) =&gt; 2
+</pre>
+
+ <div class="topbar"><div class="topbarname">elt</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">elt</span><span class="syntaxargs"><span class="syntaxargname">sequence</span><span class="syntaxargname">index</span></span>
+      =&gt; <span class="syntaxresult">element</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">sequence</td>
+<td class="syntaxargdesc">a sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">index</td>
+<td class="syntaxargdesc">valid sequence index</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+ELT function accesses specified elements of sequences. The index is
+counted from zero. Accessing out-of-bounds indices signals condition,
+or causes crash and/or undefined behavior, depending on compilation
+safety mode. Unlike AREF, ELT works on lists too.
+</p>
+<p class="comment">
+ELT may by used with conjunction of SETF.
+</p>
+<pre class="example">(elt "hola" 0) =&gt; #\h
+(elt "hola" 3) =&gt; #\a
+(elt #(5 3 6 8) 1) =&gt; 3
+(elt '(5 3 6 8) 1) =&gt; 3
+</pre>
+<pre class="example">(let ((a (list 1 2 3 4))) (setf (elt a 1) 'x) a) =&gt; (1 X 3 4)
+(let ((a (copy-seq "hola"))) (setf (elt a 1) #\O) a) =&gt; "hOla"
+</pre>
+
+ <div class="topbar"><div class="topbarname">find</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">find</span><span class="syntaxargs"><span class="syntaxargname">item</span><span class="syntaxargname">sequence</span><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">from-end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">start</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">element</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">item</td>
+<td class="syntaxargdesc">an item to be found</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">sequence</td>
+<td class="syntaxargdesc">a sequence to be searched</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function key and item comparison</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">from-end</td>
+<td class="syntaxargdesc">direction of search, default is NIL - forward</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">starting position for search, default is 0</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">final position for search, default is NIL - end of sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting value before test</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+FIND function searches for an element (item) satisfying the test.
+Return value is element itself or NIL if item is not found. See also
+POSITION, POSITION-IF, FIND, FIND-IF and MEMBER.
+</p>
+<pre class="example">(find #\s "Some sequence") =&gt; #\s
+(find #\s "Some sequence" :key #'char-downcase) =&gt; #\S
+(find #\s "Some sequence" :key #'char-downcase :start 1) =&gt; #\s
+(find #\x "Some sequence") =&gt; NIL
+(find '(1 2) #(9 3 (1 2) 6 7 8)) =&gt; NIL
+(find '(1 2) #(9 3 (1 2) 6 7 8) :test #'equal) =&gt; (1 2)
+(find 1 #(0 1 0 0 0 1 0) :from-end t) =&gt; 1
+</pre>
+
+ <div class="topbar"><div class="topbarname">length</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">length</span><span class="syntaxargs"><span class="syntaxargname">seq</span></span>
+      =&gt; <span class="syntaxresult">integer</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">seq</td>
+<td class="syntaxargdesc">sequence of objects</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+LENGTH function computes length of the list, vector, string or other
+sequences. For lists, LENGTH may get stuck in cyclic cons structures
+unlike LIST-LENGTH.
+</p>
+<pre class="example">(length "hola") =&gt; 4
+(length "") =&gt; 0
+(length #(2 'a 5.6)) =&gt; 3
+(length #*101010101110) =&gt; 12
+(length (list 'a 'b 'c)) =&gt; 3
+(length nil) =&gt; 0
+(length '(a . (b . nil))) =&gt; 2
+(length (cons "moo" nil)) =&gt; 1
+(length (cons "moo" (cons "boo" nil))) =&gt; 2
+</pre>
+
+ <div class="topbar"><div class="topbarname">make-array</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">make-array</span><span class="syntaxargs"><span class="syntaxargname">dimensions</span><span class="syntaxargname">element-type</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">initial-element</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">initial-contents</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">adjustable</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">fill-pointer</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">displaced-to</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">displaced-index-offset</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">an array</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">dimensions</td>
+<td class="syntaxargdesc">list of dimensions, or non-negative integer</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">element-type</td>
+<td class="syntaxargdesc">a type specifier, default is T - any type</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">initial-element</td>
+<td class="syntaxargdesc">a value, default is implementation dependent</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">initial-contents</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">adjustable</td>
+<td class="syntaxargdesc">a generalized boolean, default is NIL</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">fill-pointer</td>
+<td class="syntaxargdesc">a valid fill pointer for the array, or T or NIL</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">displaced-to</td>
+<td class="syntaxargdesc">an array or NIL, default is NIL</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">displaced-index-offset</td>
+<td class="syntaxargdesc">a valid array row-major index for displaced arrays, default is 0</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAKE-ARRAY function creates a new array. Array can be adjustable if
+specified, that is its dimensions can be shrinked or enlarged by
+ADJUST-ARRAY function. 
+</p>
+<p class="comment">
+One-dimensional arrays can have a fill-pointer. Fill-pointer makes
+array look like as if it would be shorter with only as many elements
+as fill-pointer specifies - while elements at the real end of array a
+still retained. Such array can be very easily enlarged or shrinked in
+bounds of the real size just by setting fill-pointer which is very
+fast. Functions like VECTOR-PUSH, VECTOR-PUSH-EXTEND and VECTOR-POP
+make use of this.
+</p>
+<p class="comment">
+Arrays can be displaced onto another array. Such array can have
+different dimensions and elements are shared on underlying row-major
+element order.
+</p>
+<p class="comment">
+See also AREF, ELT, ADJUST-ARRAY, ARRAY-DIMENSION, ARRAY-DIMENSIONS,
+FILL-POINTER, ARRAY-IN-BOUNDS-P, ARRAY-ROW-MAJOR-INDEX, ARRAYP.
+</p>
+<pre class="example">(make-array 5 :initial-element 'x) =&gt; #(X X X X X)
+(make-array '(2 3) :initial-element 'x) =&gt; #2A((X X X) (X X X))
+(length (make-array 10 :fill-pointer 4)) =&gt; 4
+(array-dimensions (make-array 10 :fill-pointer 4)) =&gt; (10)
+(make-array 10 :element-type 'bit :initial-element 0) =&gt; #*0000000000
+(make-array 10 :element-type 'character :initial-element #\a) =&gt; "aaaaaaaaaa"
+(let ((a (make-array '(2 2) :initial-element 'x :adjustable t))) (adjust-array a '(1 3) :initial-element 'y) a) =&gt; #2A((X X Y))
+</pre>
+
+ <div class="topbar"><div class="topbarname">make-sequence</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">make-sequence</span><span class="syntaxargs"><span class="syntaxargname">result-type</span><span class="syntaxargname">size</span><span class="syntaxargname">initial-element</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">sequence</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">result-type</td>
+<td class="syntaxargdesc">sequence type specifier</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">size</td>
+<td class="syntaxargdesc">a non-negative integer</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">initial-element</td>
+<td class="syntaxargdesc">element which is used to fill sequence, default is implementation dependent</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAKE-SEQUENCE creates a new sequence of specified type and number of
+elements. See also MAP.
+</p>
+<pre class="example">(make-sequence 'list 4 :initial-element 'x) =&gt; (X X X X)
+(make-sequence 'vector 4 :initial-element 'x) =&gt; #(X X X X)
+(make-sequence 'vector 4 :initial-element #\a) =&gt; #(#\a #\a #\a #\a)
+(make-sequence 'string 4 :initial-element #\a) =&gt; "aaaa"
+</pre>
+
+ <div class="topbar"><div class="topbarname">map</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">map</span><span class="syntaxargs"><span class="syntaxargname">result-type</span><span class="syntaxargname">fn</span><span class="syntaxargname">seqs</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">sequence or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">result-type</td>
+<td class="syntaxargdesc">sequence type specifier or NIL</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">function that takes as many arguments as there are sequences</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">seqs</td>
+<td class="syntaxargdesc">sequences which elements are processed in parallel</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAP applies function FN to elements of sequence with same index. Each
+application result is put into resulting sequence. Length of resulting
+sequence is the length of the shortest sequence in argument. Return value
+is NIL when NIL was specified as result-type. See also MAPC, MAPCAR and MAPCAN.
+</p>
+<pre class="example">(map 'list (lambda (x) (+ x 10)) '(1 2 3 4)) =&gt; (11 12 13 14)
+</pre>
+<pre class="example">(map 'vector #'identity "hola") =&gt; #(#\h #\o #\l #\a)
+(map '(vector character) #'identity #(#\h #\o #\l #\a)) =&gt; "hola"
+(map 'string #'identity '(#\h #\o #\l #\a)) =&gt; "hola"
+</pre>
+<pre class="example">(map 'vector #'list '(123 symbol "string" 345) '(1 2 3)) =&gt; #((123 1) (SYMBOL 2) ("string" 3))
+</pre>
+<pre class="example">(map 'list #'* '(3 4 5) '(4 5 6)) =&gt; (12 20 30)
+(map 'nil #'* '(3 4 5) '(4 5 6)) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">map-into</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">map-into</span><span class="syntaxargs"><span class="syntaxargname">result-sequence</span><span class="syntaxargname">fn</span><span class="syntaxargname">seqs</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">result-sequence</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">result-sequence</td>
+<td class="syntaxargdesc">sequence type specifier or NIL</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">function that takes as many arguments as there are sequences</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">seqs</td>
+<td class="syntaxargdesc">sequences which elements are processed in parallel</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAP-INTO applies function fn to elements of sequence with same index.
+Each application result is destructively put into resulting sequence.
+The iteration terminates when the shortest sequence (of any of the
+sequences or the result-sequence) is exhausted. Return value is same
+as the first argument. See also MAP, MAPCAR and MAPCAN.
+</p>
+<pre class="example">(let ((a (list 1 2 3 4))) (map-into a #'* a a) a) =&gt; (1 4 9 16)
+(let ((a (vector 1 2 3 4))) (map-into a #'* a a) a) =&gt; #(1 4 9 16)
+(let ((a (vector 1 2 3 4))) (map-into a #'1+ '(1 2)) a) =&gt; #(2 3 3 4)
+</pre>
+
+ <div class="topbar"><div class="topbarname">position</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">position</span><span class="syntaxargs"><span class="syntaxargname">item</span><span class="syntaxargname">sequence</span><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">from-end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">start</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">index or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">item</td>
+<td class="syntaxargdesc">an item to be found</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">sequence</td>
+<td class="syntaxargdesc">a sequence to be searched</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function key and item comparison</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">from-end</td>
+<td class="syntaxargdesc">direction of search, default is NIL - forward</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">starting position for search, default is 0</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">final position for search, default is NIL - end of sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting value before test</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+POSITION function searches for an element (item) satisfying the
+test. Return value is index of such item or NIL if item is not
+found. Index is relative to start of the sequence regardless of
+arguments. See also POSITION-IF, FIND, FIND-IF and MEMBER.
+</p>
+<pre class="example">(position #\s "Some sequence") =&gt; 5
+(position #\s "Some sequence" :key #'char-downcase) =&gt; 0
+(position #\s "Some sequence" :key #'char-downcase :start 1) =&gt; 5
+(position #\x "Some sequence") =&gt; NIL
+(position '(1 2) #(9 3 (1 2) 6 7 8)) =&gt; NIL
+(position '(1 2) #(9 3 (1 2) 6 7 8) :test #'equal) =&gt; 2
+(position 1 #(0 1 0 0 0 1 0) :from-end t) =&gt; 5
+</pre>
+
+ <div class="topbar"><div class="topbarname">reduce</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">reduce</span><span class="syntaxargs"><span class="syntaxargname">fn</span><span class="syntaxargname">seq</span><span class="syntaxargname">initial-value</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">from-end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">start</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">a two argument function</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">seq</td>
+<td class="syntaxargdesc">a sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">initial-value</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting values from sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">from-end</td>
+<td class="syntaxargdesc">direction flag, default is NIL</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">bounding index</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">bounding index</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+REDUCE applies function fn to its previous result and next element.
+The result is what fn returned in last call. For the first call fn is
+called with either initial-value and first element or first two
+elements. See also MAPCAR, MAPCAN, MAP.
+</p>
+<pre class="example">(reduce #'list '(1 2 3 4)) =&gt; (((1 2) 3) 4)
+(reduce #'list '(1 2 3 4) :initial-value 0) =&gt; ((((0 1) 2) 3) 4)
+(reduce #'list '(1 2 3 4) :initial-value 0 :from-end t) =&gt; (1 (2 (3 (4 0))))
+(reduce #'list '(1 2 3 4) :from-end t) =&gt; (1 (2 (3 4)))
+(reduce (lambda (x y) (+ (* x 10) y)) '(1 2 3 4)) =&gt; 1234
+(reduce #'+ '(1 2 3 4)) =&gt; 10
+(reduce #'* '(1 2 3 4) :initial-value 1) =&gt; 24
+</pre>
+
+ <div class="topbar"><div class="topbarname">remove</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">remove</span><span class="syntaxargs"><span class="syntaxargname">item</span><span class="syntaxargname">seq</span><span class="syntaxargname">from-end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">test-not</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">start</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">count</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">sequence</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">item</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">seq</td>
+<td class="syntaxargdesc">a sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">from-end</td>
+<td class="syntaxargdesc">boolean specifying processing direction</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">equality test</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test-not</td>
+<td class="syntaxargdesc">non-equality test</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">bounding index, default 0</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">bounding index, default nil</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">count</td>
+<td class="syntaxargdesc">integer for how many elements to remove, or nil</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function of one argument</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+REMOVE make new sequence of the same type that has some elements removed.
+COUNT may limit the number of removed elements.
+See also REMOVE-IF, DELETE, DELETE-IF, SUBSEQ, and REMOVE-DUPLICATES.
+</p>
+<pre class="example">(remove #\s "Sample string sequence") =&gt; "Sample tring equence"
+(remove #\s "Sample string sequence" :count 1) =&gt; "Sample tring sequence"
+(remove #\s "Sample string sequence" :test #'char-equal) =&gt; "ample tring equence"
+(remove nil '(1 2 nil 4 nil 6)) =&gt; (1 2 4 6)
+</pre>
+
+ <div class="topbar"><div class="topbarname">reverse</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">reverse</span><span class="syntaxargs"><span class="syntaxargname">seq</span></span>
+      =&gt; <span class="syntaxresult">a sequence</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">seq</td>
+<td class="syntaxargdesc">a sequence</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+REVERSE function makes new sequence with reverted order of elements.
+See also MAP, MAPCAR and MAPCAN.
+</p>
+<pre class="example">(reverse '(1 2 3 4)) =&gt; (4 3 2 1)
+(reverse '#(1 2 3 4)) =&gt; #(4 3 2 1)
+(reverse "hola") =&gt; "aloh"
+</pre>
+
+ <div class="topbar"><div class="topbarname">search</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">search</span><span class="syntaxargs"><span class="syntaxargname">sequence1</span><span class="syntaxargname">sequence2</span><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">from-end</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">start1</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">start2</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end1</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end2</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">key</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">position</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">sequence1</td>
+<td class="syntaxargdesc">a sequence to be found in sequence2</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">sequence2</td>
+<td class="syntaxargdesc">a sequence to be searched</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">function key and item comparison</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">from-end</td>
+<td class="syntaxargdesc">direction of search, default is NIL - forward</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start1</td>
+<td class="syntaxargdesc">starting position in sequence1, default is 0</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start2</td>
+<td class="syntaxargdesc">starting position in sequence2, default is 0</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end1</td>
+<td class="syntaxargdesc">final position in sequence1, default is NIL - end of sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end2</td>
+<td class="syntaxargdesc">final position in sequence2, default is NIL - end of sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">function for extracting value before test</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+SEARCH function searches for one sequence in another.
+See also POSITION, POSITION-IF, FIND, FIND-IF and MEMBER.
+</p>
+<pre class="example">(search "lo" "hello world") =&gt; 3
+(search "lo" "HelLo WoRLd" :key #'char-upcase) =&gt; 3
+(search "lo" "HelLo WoRLd") =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">some</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">some</span><span class="syntaxargs"><span class="syntaxargname">predicate</span><span class="syntaxargname">sequences</span><sup class="syntaxargnote">(one or more)</sup></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">predicate</td>
+<td class="syntaxargdesc">predicate function</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">sequences</td>
+<td class="syntaxargdesc">sequences</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+SOME function searches the sequences for values for which predicate
+returns true. It there is such list of values that occupy same index
+in each sequence, return value is true, otherwise false.
+</p>
+<pre class="example">(some #'alphanumericp "") =&gt; NIL
+(some #'alphanumericp "...") =&gt; NIL
+(some #'alphanumericp "ab...") =&gt; T
+(some #'alphanumericp "abc") =&gt; T
+</pre>
+<pre class="example">(some #'&lt; '(1 2 3 4) '(2 3 4 5)) =&gt; T
+(some #'&lt; '(1 2 3 4) '(1 3 4 5)) =&gt; T
+(some #'&lt; '(1 2 3 4) '(1 2 3 4)) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">string</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">string</span><span class="syntaxargs"><span class="syntaxargname">object</span></span>
+      =&gt; <span class="syntaxresult">string</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">object</td>
+<td class="syntaxargdesc">an object</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+STRING function converts symbols, characters and possibly some other
+types into a string. If object is of string type, it is directly
+returned.
+</p>
+<pre class="example">(string 'moo) =&gt; "MOO"
+(string #\a) =&gt; "a"
+(string "some string") =&gt; "some string"
+</pre>
+
+ <div class="topbar"><div class="topbarname">string-downcase</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">string-downcase</span><span class="syntaxargs"><span class="syntaxargname">string</span><span class="syntaxargname">start</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">string</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">string</td>
+<td class="syntaxargdesc">a string</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">integer bouded by string length</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">integer bouded by string length</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+STRING-DOWNCASE function converts string into its upcase reprezentation.
+returned. See also STRING-UPCASE, STRING-CAPITALIZE, CHAR-UPCASE and
+CHAR-DOWNCASE.
+</p>
+<pre class="example">(string-downcase "SOME STRING") =&gt; "some string"
+(string-downcase "SOME STRING" :start 2) =&gt; "SOme string"
+(string-downcase "SOME STRING" :start 2 :end 8) =&gt; "SOme strING"
+</pre>
+
+ <div class="topbar"><div class="topbarname">string-upcase</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">string-upcase</span><span class="syntaxargs"><span class="syntaxargname">string</span><span class="syntaxargname">start</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">string</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">string</td>
+<td class="syntaxargdesc">a string</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">integer bouded by string length</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">integer bouded by string length</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+STRING-UPCASE function converts string into its upcase reprezentation.
+returned. See also STRING-DOWNCASE, STRING-CAPITALIZE, CHAR-UPCASE and
+CHAR-DOWNCASE.
+</p>
+<pre class="example">(string-upcase "some string") =&gt; "SOME STRING"
+(string-upcase "some string" :start 2) =&gt; "soME STRING"
+(string-upcase "some string" :start 2 :end 8) =&gt; "soME STRing"
+</pre>
+
+ <div class="topbar"><div class="topbarname">subseq</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">subseq</span><span class="syntaxargs"><span class="syntaxargname">seq</span><span class="syntaxargname">start</span><span class="syntaxargname">end</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">sequence</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">seq</td>
+<td class="syntaxargdesc">a sequence</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">bounding index</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">bounding index, default NIL</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+SUBSEQ function makes new sequence as a subseqence of argument.
+Default ending index is end of sequence. See also COPY-SEQ and MAP.
+</p>
+<p class="comment">
+SUBSEQ may be used with SETF.
+</p>
+<pre class="example">(subseq "hello world" 3) =&gt; "lo world"
+(subseq "hello world" 3 5) =&gt; "lo"
+(let ((a "hello world")) (setf (subseq a 3 5) "LO") a) =&gt; "helLO world"
+(let ((a "hello world")) (setf (subseq a 3 5) "YYY") a) =&gt; "helYY world"
+</pre>
+
+ <div class="topbar"><div class="topbarname">vector</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">vector</span><span class="syntaxargs"><span class="syntaxargname">list</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">vector</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">list of objects</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+VECTOR function makes new simple general vector from arguments. See
+also LIST.
+</p>
+<pre class="example">(vector 1 2 3) =&gt; #(1 2 3)
+(vector 'a #c(1 2) "moo") =&gt; #(A #C(1 2) "moo")
+(elt (vector 1 2 3) 0) =&gt; 1
+(elt (vector 1 2 3) 1) =&gt; 2
+(vector) =&gt; #()
+(equal #(1 2 3) (vector 1 2 3)) =&gt; NIL
+(equalp #(1 2 3) (vector 1 2 3)) =&gt; T
+(type-of (vector 1 2 3)) =&gt; (SIMPLE-VECTOR 3)
+</pre>
+
+ <div class="topbar"><div class="topbarname">vector-pop</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">vector-pop</span><span class="syntaxargs"><span class="syntaxargname">vector</span></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">vector</td>
+<td class="syntaxargdesc">a vector with fill pointer</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+VECTOR-POP function pops a element from specified vector. Supplied
+vector must have fill-pointer (see MAKE-ARRAY). Fill-pointer is
+decremented. The element to be popped is found at new fill-pointer
+position. See also MAKE-ARRAY, VECTOR-POP and VECTOR-PUSH. Return
+value is object found at previous end of vector.
+</p>
+<pre class="example">(defparameter *v* (make-array 2 :fill-pointer 0)) =&gt; *V*
+(vector-push 4 *v*) =&gt; 0
+(vector-push 3 *v*) =&gt; 1
+*v* =&gt; #(4 3)
+(vector-pop *v*) =&gt; 3
+(vector-pop *v*) =&gt; 4
+</pre>
+
+ <div class="topbar"><div class="topbarname">vector-push</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">vector-push</span><span class="syntaxargs"><span class="syntaxargname">new-element</span><span class="syntaxargname">vector</span></span>
+      =&gt; <span class="syntaxresult">index or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">new-element</td>
+<td class="syntaxargdesc">a object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">vector</td>
+<td class="syntaxargdesc">a vector with fill pointer</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+VECTOR-PUSH function pushes new-element into specified vector.
+Supplied vector must have fill-pointer (see MAKE-ARRAY). New element
+is placed at last fill-pointer position and fill-pointer is
+incremented. See also MAKE-ARRAY, VECTOR-POP and VECTOR-PUSH. Return
+value is index at which the new item was placed, or NIL if there is no
+room.
+</p>
+<pre class="example">(defparameter *v* (make-array 2 :fill-pointer 0)) =&gt; *V*
+(vector-push 4 *v*) =&gt; 0
+(vector-push 3 *v*) =&gt; 1
+(vector-push 2 *v*) =&gt; NIL
+*v* =&gt; #(4 3)
+(vector-pop *v*) =&gt; 3
+(vector-pop *v*) =&gt; 4
+</pre>
+
+ <div class="topbar"><div class="topbarname">vector-push-extend</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">vector-push-extend</span><span class="syntaxargs"><span class="syntaxargname">new-element</span><span class="syntaxargname">vector</span><span class="syntaxargname">extension</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">index</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">new-element</td>
+<td class="syntaxargdesc">a object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">vector</td>
+<td class="syntaxargdesc">a vector with fill pointer</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">extension</td>
+<td class="syntaxargdesc">a positive integer</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+VECTOR-PUSH-EXTEND function pushes new-element into specified vector.
+Supplied vector must be adjustable (see MAKE-ARRAY) and have
+fill-pointer. New element is placed at last fill-pointer position and
+fill-pointer is incremented. Vector size is adjusted a number of items
+as specified by extension argument, if necessary. See also MAKE-ARRAY,
+VECTOR-POP and VECTOR-PUSH. Return value is index at which the new
+item was placed.
+</p>
+<pre class="example">(defparameter *v* (make-array 2 :fill-pointer 0 :adjustable t)) =&gt; *V*
+(vector-push-extend 4 *v*) =&gt; 0
+(vector-push-extend 3 *v*) =&gt; 1
+(vector-push-extend 2 *v*) =&gt; 2
+*v* =&gt; #(4 3 2)
+(vector-pop *v*) =&gt; 2
+(vector-pop *v*) =&gt; 3
+(vector-pop *v*) =&gt; 4
+</pre>
+
+ </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_other">Symbol, Characters, Hash, Structure, Objects and Conversions</div>
+<div class="categoryinside">
+<div class="topbar"><div class="topbarname">atom</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">atom</span><span class="syntaxargs"><span class="syntaxargname">object</span></span>
+      =&gt; <span class="syntaxresult">T or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">object</td>
+<td class="syntaxargdesc">an object</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+ATOM function returns true if the argument is not a cons cell,
+otherwise it returns false. See CONS and LIST.
+</p>
+<pre class="example">(atom nil) =&gt; T
+(atom 'some-symbol) =&gt; T
+(atom 3) =&gt; T
+(atom "moo") =&gt; T
+(atom (cons 1 2)) =&gt; NIL
+(atom '(1 . 2)) =&gt; NIL
+(atom '(1 2 3 4)) =&gt; NIL
+(atom (list 1 2 3 4)) =&gt; NIL
+</pre>
+
+   <div class="topbar"><div class="topbarname">coerce</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">coerce</span><span class="syntaxargs"><span class="syntaxargname">object</span><span class="syntaxargname">result-type</span></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">object</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">result-type</td>
+<td class="syntaxargdesc">a type specifier</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+COERCE function converts between different types. See full
+documentation for conversion description.
+</p>
+<pre class="example">(coerce '(a b c) 'vector) =&gt; #(A B C)
+(coerce #(a b c) 'list) =&gt; (A B C)
+(coerce 4.4d0 'single-float) =&gt; 4.4
+(coerce 4.4s0 'double-float) =&gt; 4.400000095367432d0
+(coerce "x" 'character) =&gt; #\x
+</pre>
+
+    <div class="topbar"><div class="topbarname">gethash</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">gethash</span><span class="syntaxargs"><span class="syntaxargname">key</span><span class="syntaxargname">hashtable</span><span class="syntaxargname">default</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">key</td>
+<td class="syntaxargdesc">an object</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">hashtable</td>
+<td class="syntaxargdesc">a hash-table</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">default</td>
+<td class="syntaxargdesc">an object, default is NIL</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+GETHASH function reads associated value for given key in hashtable.
+(SETF GETHASH) adds or replaces associated values. See also
+MAKE-HASH-TABLE.
+</p>
+<pre class="example">(defparameter *tab* (make-hash-table)) =&gt; *TAB*
+(gethash 'x *tab*) =&gt; NIL, NIL
+(setf (gethash 'x *tab*) "x") =&gt; "x"
+(setf (gethash 'y *tab*) "yy") =&gt; "yy"
+(gethash 'x *tab*) =&gt; "x", T
+(gethash 'y *tab*) =&gt; "yy", T
+(gethash 'z *tab* 'moo) =&gt; MOO, NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">intern</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">intern</span><span class="syntaxargs"><span class="syntaxargname">stirng</span><span class="syntaxargname">package</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">symbol, status</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">stirng</td>
+<td class="syntaxargdesc">a string</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">package</td>
+<td class="syntaxargdesc">a package designator, default is current package</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+INTERN function makes a new symbol from string. Possible status values
+are: :inherited, :external, :internal, or nil.
+</p>
+<pre class="example">(intern "MOO") =&gt; MOO, NIL
+(intern "MOO") =&gt; MOO, :INTERNAL
+(intern "moo") =&gt; |moo|, NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">make-hash-table</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">make-hash-table</span><span class="syntaxargs"><span class="syntaxargname">test</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">size</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">rehash-size</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">rehash-threshold</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">hash-table</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">EQ, EQL EQUAL or EQUALP; default is EQL</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">size</td>
+<td class="syntaxargdesc">a non-negative integer</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">rehash-size</td>
+<td class="syntaxargdesc">a real number</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">rehash-threshold</td>
+<td class="syntaxargdesc">a real number</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+MAKE-HASH-TABLE creates a new hash-table. Size parameter specifies
+initial size of inner table. Test specifies comparison operator for
+keys. See also GETHASH.
+</p>
+<pre class="example">(defparameter *tab* (make-hash-table)) =&gt; *TAB*
+(gethash 'x *tab*) =&gt; NIL, NIL
+(setf (gethash 'x *tab*) "x") =&gt; "x"
+(setf (gethash 'y *tab*) "yy") =&gt; "yy"
+(gethash 'x *tab*) =&gt; "x", T
+(gethash 'y *tab*) =&gt; "yy", T
+(gethash 'z *tab* 'moo) =&gt; MOO, NIL
+</pre>
+
+  </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_io">Input and output</div>
+<div class="categoryinside">
+<div class="topbar"><div class="topbarname">format</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">format</span><span class="syntaxargs"><span class="syntaxargname">destination</span><span class="syntaxargname">control-string</span><span class="syntaxargname">args</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">string or NIL</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">destination</td>
+<td class="syntaxargdesc">T, NIL, stream or string with fill-pointer</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">control-string</td>
+<td class="syntaxargdesc">a string with formating directives</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">args</td>
+<td class="syntaxargdesc">format arguments for control-string</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+FORMAT function does a complex text formatting. Formatting rules are
+driven by control-string and arguments in arg. When destination is
+stream or string with fill-pointer, the resulting string is written to
+it. T as a destination means "write to terminal". NIL as destination
+means "return the formatted string back as string". See also
+WRITE-STRING, TERPRI, PRINC, PRIN1 and PRINT.
+</p>
+<p class="comment">
+Control string is composed of normal text and embedded directives.
+Directives begin with tilde (~) character. Most common are: ~a -
+output with aesthetics, ~s - standard output, ~% newline, tilde
+parenthesis - flow control, tilde tilde - escape sequence for tilde.
+See full documentation or examples for more.
+</p>
+<pre class="example">(format nil "Items in list:~%~{~a, ~}" '(1 2 3 4)) =&gt; "Items in list:
+1, 2, 3, 4, "
+(format nil "~{~a~^, ~}" '(1 2 3 4)) =&gt; "1, 2, 3, 4"
+(format nil "~f" 3.141592) =&gt; "3.141592"
+(format nil "~2,3f" 3.141592) =&gt; "3.142"
+(format nil "~7,3f" 3.141592) =&gt; "  3.142"
+(format nil "~a ~s" "xyz" "xyz") =&gt; "xyz \"xyz\""
+</pre>
+
+   <div class="topbar"><div class="topbarname">read</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">read</span><span class="syntaxargs"><span class="syntaxargname">input-stream</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">eof-error-p</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">eof-value</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">recursive-p</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">input-stream</td>
+<td class="syntaxargdesc">an input stream, default is standard input</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">eof-error-p</td>
+<td class="syntaxargdesc">a boolean, true (default) is EOF should be signaled</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">eof-value</td>
+<td class="syntaxargdesc">an object that is returned as EOF value</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">recursive-p</td>
+<td class="syntaxargdesc">flag to note recursive processing</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+READ function reads arbitrary readable lisp object from input stream.
+Reading process uses *read-table*. Note that *read-eval* global
+variable controls read-time evaluation (#. macro).
+</p>
+<pre class="example">(let ((s (make-string-input-stream "(1 2 3)"))) (read s)) =&gt; (1 2 3)
+(let ((s (make-string-input-stream "#(1 2 3)"))) (read s)) =&gt; #(1 2 3)
+(let ((s (make-string-input-stream "\"hola\""))) (read s)) =&gt; "hola"
+</pre>
+
+ <div class="topbar"><div class="topbarname">read-char</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">read-char</span><span class="syntaxargs"><span class="syntaxargname">input-stream</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">eof-error-p</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">eof-value</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">recursive-p</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">char</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">input-stream</td>
+<td class="syntaxargdesc">an input stream, default is standard input</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">eof-error-p</td>
+<td class="syntaxargdesc">a boolean, true (default) is EOF should be signaled</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">eof-value</td>
+<td class="syntaxargdesc">an object that is returned as EOF value</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">recursive-p</td>
+<td class="syntaxargdesc">flag to note recursive processing</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+READ-CHAR function reads a character from input stream.
+</p>
+<pre class="example">(let ((s (make-string-input-stream (format nil "line 1~%line 2~%line 3)")))) (read-char s))
+=&gt; #\l
+</pre>
+
+ <div class="topbar"><div class="topbarname">read-line</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">read-line</span><span class="syntaxargs"><span class="syntaxargname">input-stream</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">eof-error-p</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">eof-value</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">recursive-p</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">line, missing-newline-p</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">input-stream</td>
+<td class="syntaxargdesc">an input stream, default is standard input</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">eof-error-p</td>
+<td class="syntaxargdesc">a boolean, true (default) is EOF should be signaled</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">eof-value</td>
+<td class="syntaxargdesc">an object that is returned as EOF value</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">recursive-p</td>
+<td class="syntaxargdesc">flag to note recursive processing</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+READ-LINE function reads a line from input stream into string.
+</p>
+<pre class="example">(let ((s (make-string-input-stream (format nil "line 1~%line 2~%line 3)")))) (read-line s))
+=&gt; "line 1", NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">write-string</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">write-string</span><span class="syntaxargs"><span class="syntaxargname">string</span><span class="syntaxargname">output-stream</span><sup class="syntaxargnote">(optional)</sup><span class="syntaxargname">start</span><sup class="syntaxargnote">(keyword)</sup><span class="syntaxargname">end</span><sup class="syntaxargnote">(keyword)</sup></span>
+      =&gt; <span class="syntaxresult">string</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">string</td>
+<td class="syntaxargdesc">a string</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">output-stream</td>
+<td class="syntaxargdesc">a stream, default is standard output</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">start</td>
+<td class="syntaxargdesc">bounding index</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">end</td>
+<td class="syntaxargdesc">bounding index</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+WRITE-STRING function writes string into standard output or specified
+output stream. See WRITE-LINE, FORMAT.
+</p>
+<pre class="example">(write-string "xyz")
+xyz
+=&gt; "xyz"
+</pre>
+
+ </div>
+</div>
+<div class="categorycontainer">
+<div class="categorydesc catcol_control">Functions, Evaluation, Flow Control, Definitions and Syntax</div>
+<div class="categoryinside">
+<div class="topbar"><div class="topbarname">apply</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">apply</span><span class="syntaxargs"><span class="syntaxargname">fn</span><span class="syntaxargname">args</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">a function designator</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">args</td>
+<td class="syntaxargdesc">call arguments</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+APPLY function call supplied function with specified arguments.
+Argument list is constructed as (append (butlast args) (first (last
+args))). Note that there is limitation of maximal number of arguments,
+see CALL-ARGUMENTS-LIMIT constant. See also FUNCALL, LAMBDA.
+</p>
+<pre class="example">(apply #'+ 1 2 3 '(4 5 6)) =&gt; 21
+(apply #'sin '(1.0)) =&gt; 0.84147096
+(apply #'sin 1.0 nil) =&gt; 0.84147096
+</pre>
+
+  <div class="topbar"><div class="topbarname">case</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">case</span><span class="syntaxargs"><span class="syntaxargname">expression</span><span class="syntaxargname">variants</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">expression</td>
+<td class="syntaxargdesc">a value used to distinguish between variants</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">variants</td>
+<td class="syntaxargdesc">list of match-values and code variants</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+CASE macro is used for branching. Variants are tested sequentially
+for EQL equality with from the top. See also IF, CASE.
+</p>
+<pre class="example">(case (+ 1 2)
+      (5 "variant 1, five")
+      ((2 3) "variant 2, two or three")
+      (otherwise "variant 3, none of above")) =&gt; "variant 2, two or three"
+</pre>
+
+ <div class="topbar"><div class="topbarname">cond</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">cond</span><span class="syntaxargs"><span class="syntaxargname">variants</span></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">variants</td>
+<td class="syntaxargdesc">list of test and code variants</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+COND macro is used for branching. Variants are tested sequentially
+from the top. See also IF, CASE.
+</p>
+<pre class="example">(cond ((&gt; 3 4) "variant 1")
+      ((&gt; 4 2) "variant 2")
+      (t "always valid variant")) =&gt; "variant 2"
+</pre>
+
+   <div class="topbar"><div class="topbarname">defparameter</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">defparameter</span><span class="syntaxargs"><span class="syntaxargname">name</span><span class="syntaxargname">initial-value</span><span class="syntaxargname">documentation</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">name</td>
+<td class="syntaxargdesc">a name for global variable</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">initial-value</td>
+<td class="syntaxargdesc">an expression</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">documentation</td>
+<td class="syntaxargdesc">documentation string</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+DEFPARAMETER defines global variable with dynamic scoping. Usual
+conventions dictate to make such variables easy to distinguish so
+their name is surrounded by stars. Value for variable is reevaluated
+for each occurence (unlike with DEFVAR). See also DEFVAR, LET, SETQ.
+</p>
+<pre class="example">(defparameter *my-global-variable* (+ 3 5)) =&gt; *MY-GLOBAL-VARIABLE*
+*my-global-variable* =&gt; 8
+</pre>
+
+ <div class="topbar"><div class="topbarname">defun</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">defun</span><span class="syntaxargs"><span class="syntaxargname">name</span><span class="syntaxargname">args</span><span class="syntaxargname">forms</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">symbol</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">name</td>
+<td class="syntaxargdesc">symbol</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">args</td>
+<td class="syntaxargdesc">arguments of function</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">forms</td>
+<td class="syntaxargdesc">sequentially executed forms</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+DEFUN form creates named function. The function is associated with
+definition environment. Named functions can be called simply by
+specifying their name in function position in parenthesis, or they can
+be acquired by FUNCTION special form, or SYMBOL-FUNCTION function.
+Arguments of function can be regular (matched by position), optional
+(with default values), keyword (matched by keyword symbol) and rest
+(taking rest of arguments into a list). Result of function application
+is value of the last form unless return function or nonlocal exit is
+executed. Functions can be redefined. See also LAMBDA, FUNCALL, APPLY.
+</p>
+<pre class="example">(defun myname (x) (+ x 3)) =&gt; MYNAME
+</pre>
+<pre class="example">(defun myname (x y) (* x y) (+ x y)) (myname 2 3) =&gt; 5
+</pre>
+<pre class="example">(defun myname (&amp;optional (one 1) (two 2)) (list one two)) (myname) =&gt; (1 2)
+(defun myname (&amp;optional (one 1) (two 2)) (list one two)) (myname 10) =&gt; (10 2)
+(defun myname (&amp;optional (one 1) (two 2)) (list one two)) (myname 10 20) =&gt; (10 20)
+</pre>
+<pre class="example">(defun myname (&amp;rest myargs) (length myargs)) (myname) =&gt; 0
+(defun myname (&amp;rest myargs) (length myargs)) (myname 4 5 6) =&gt; 3
+(defun myname (&amp;rest myargs) (length myargs)) (myname '(4 5 6)) =&gt; 1
+</pre>
+<pre class="example">(defun myname (&amp;key one two) (list one two)) (myname) =&gt; (NIL NIL)
+(defun myname (&amp;key one two) (list one two)) (myname :two 7) =&gt; (NIL 7)
+(defun myname (&amp;key one two) (list one two)) (myname :two 7 :one 4) =&gt; (4 7)
+</pre>
+
+     <div class="topbar"><div class="topbarname">eval</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">eval</span><span class="syntaxargs"><span class="syntaxargname">form</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">form</td>
+<td class="syntaxargdesc">a value forming lisp expression</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+EVAL function interprets (or compiles and runs) the argument and
+returns the result.
+See also APPLY, LAMBDA, FUNCALL.
+</p>
+<pre class="example">(eval '(+ 1 2)) =&gt; 3
+(eval '(let ((x 2)) (sin x))) =&gt; 0.9092974
+(let ((expr '(((x 2)) (sin x)))) (eval (cons 'let expr))) =&gt; 0.9092974
+</pre>
+
+ <div class="topbar"><div class="topbarname">flet</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special form</div>
+</div>
+<span class="syntaxname">flet</span><span class="syntaxargs"><span class="syntaxargname">bindings</span><span class="syntaxargname">body</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">bindings</td>
+<td class="syntaxargdesc">list containing function definitions </td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">body</td>
+<td class="syntaxargdesc">program code in which definitions above are effective, implicit progn</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+FLET is special form for local function binding. Bindings are 
+not recursive and cannot refer to each other.
+Each binding contains function name, arguments, and function body.
+See LABELS, DEFUN, LAMBDA.
+</p>
+<pre class="example">(flet ((sin2x (x) (sin (* 2 x)))
+       (cos2x (x) (cos (* 2 x))))
+ (+ (sin2x 0.2) (cos2x 0.2)))
+=&gt; 1.3104793
+</pre>
+
+ <div class="topbar"><div class="topbarname">funcall</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: function</div>
+</div>
+<span class="syntaxname">funcall</span><span class="syntaxargs"><span class="syntaxargname">fn</span><span class="syntaxargname">args</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">fn</td>
+<td class="syntaxargdesc">a function designator</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">args</td>
+<td class="syntaxargdesc">call arguments</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+FUNCALL function call supplied function with specified arguments.
+Argument list is same as in the rest of funcall call. Function
+designator is function itself or symbol specifying global function
+name. Note that there is limitation of maximal number of arguments,
+see CALL-ARGUMENTS-LIMIT constant. See also APPLY, LAMBDA.
+</p>
+<pre class="example">(funcall #'+ 1 2 3 4 5 6) =&gt; 21
+(funcall #'sin 1.0) =&gt; 0.84147096
+(funcall 'sin 1.0) =&gt; 0.84147096
+</pre>
+
+ <div class="topbar"><div class="topbarname">function</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special form</div>
+</div>
+<span class="syntaxname">function</span><span class="syntaxargs"><span class="syntaxargname">symbol</span></span>
+      =&gt; <span class="syntaxresult">function</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">symbol</td>
+<td class="syntaxargdesc">symbol of function name</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+FUNCTION is special form for accessing namespace of functions. See
+also QUOTE.
+</p>
+<pre class="example">(function sin) =&gt; #&lt;FUNCTION&gt;
+#'sin =&gt; #&lt;FUNCTION&gt;
+(funcall #'sin 1.0) =&gt; 0.84147096
+</pre>
+
+ <div class="topbar"><div class="topbarname">if</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special syntax</div>
+</div>
+<span class="syntaxname">if</span><span class="syntaxargs"><span class="syntaxargname">test</span><span class="syntaxargname">then</span><span class="syntaxargname">else</span><sup class="syntaxargnote">(optional)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">test</td>
+<td class="syntaxargdesc">an expression</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">then</td>
+<td class="syntaxargdesc">an expression</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">else</td>
+<td class="syntaxargdesc">an expression, default NIL</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+IF special form is used for branching. Either "then" or "else" branch
+is taken. Then branch is selected when "test" result is not NIL. See
+also COND, CASE.
+</p>
+<pre class="example">(if (&gt; 3 4) "variant 1" "variant 2") =&gt; "variant 2"
+(if (&gt; 4 3) "variant 1" "variant 2") =&gt; "variant 1"
+</pre>
+
+ <div class="topbar"><div class="topbarname">labels</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special form</div>
+</div>
+<span class="syntaxname">labels</span><span class="syntaxargs"><span class="syntaxargname">bindings</span><span class="syntaxargname">body</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">bindings</td>
+<td class="syntaxargdesc">list containing function definitions </td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">body</td>
+<td class="syntaxargdesc">program code in which definitions above are effective, implicit progn</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+LABELS is special form for local function binding. Bindings can be 
+recursive and can refer to each other.
+Each binding contains function name, arguments, and function body.
+See FLET, DEFUN, LAMBDA.
+</p>
+<pre class="example">(labels ((fact2x (x) (fact (* 2 x)))
+         (fact (x) (if (&lt; x 2) 1 (* x (fact (1- x))))))
+  (fact2x 3))
+ =&gt; 720
+</pre>
+
+ <div class="topbar"><div class="topbarname">lambda</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special</div>
+</div>
+<span class="syntaxname">lambda</span><span class="syntaxargs"><span class="syntaxargname">args</span><span class="syntaxargname">forms</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">function</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">args</td>
+<td class="syntaxargdesc">arguments of function</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">forms</td>
+<td class="syntaxargdesc">sequentially executed forms</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+LAMBDA form creates function object associated with definition
+environment. This function object is called "closure". It can be
+applied later with funcall. Arguments of function can be regular
+(matched by position), optional (with default values), keyword
+(matched by keyword symbol) and rest (taking rest of arguments into
+a list). Lambda form don't have to be prefixed with "#'" syntax.
+Result of function application is value of the last form unless return
+function or nonlocal exit is executed.
+</p>
+<pre class="example">(lambda (x) (+ x 3)) =&gt; &lt;#closure&gt;
+</pre>
+<pre class="example">(funcall (lambda (x y) (* x y) (+ x y)) 2 3) =&gt; 5
+</pre>
+<pre class="example">(funcall (lambda (&amp;optional (one 1) (two 2)) (list one two))) =&gt; (1 2)
+(funcall (lambda (&amp;optional (one 1) (two 2)) (list one two)) 10) =&gt; (10 2)
+(funcall (lambda (&amp;optional (one 1) (two 2)) (list one two)) 10 20) =&gt; (10 20)
+</pre>
+<pre class="example">(funcall (lambda (&amp;rest myargs) (length myargs))) =&gt; 0
+(funcall (lambda (&amp;rest myargs) (length myargs)) 4 5 6) =&gt; 3
+(funcall (lambda (&amp;rest myargs) (length myargs)) '(4 5 6)) =&gt; 1
+</pre>
+<pre class="example">(funcall (lambda (&amp;key one two) (list one two))) =&gt; (NIL NIL)
+(funcall (lambda (&amp;key one two) (list one two)) :two 7) =&gt; (NIL 7)
+(funcall (lambda (&amp;key one two) (list one two)) :two 7 :one 4) =&gt; (4 7)
+</pre>
+
+ <div class="topbar"><div class="topbarname">let</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special form</div>
+</div>
+<span class="syntaxname">let</span><span class="syntaxargs"><span class="syntaxargname">bindings</span><span class="syntaxargname">body</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab">
+<tbody><tr class="arg">
+<td class="syntaxargname">bindings</td>
+<td class="syntaxargdesc">list of variable - initial value pairs</td>
+</tr>
+<tr class="arg">
+<td class="syntaxargname">body</td>
+<td class="syntaxargdesc">program code in which definitions above are effective, implicit progn</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p class="comment">
+LET is special form for variable binding. Bindings are described in
+two element lists where the first element specifies name and the
+second is code to compute its value, or single variable without
+default initialization. There are also declarations possible before
+body.
+</p>
+<pre class="example">(let (a b (c 3) (d (+ 1 2))) (list a b c d)) =&gt; (NIL NIL 3 3)
+</pre>
+
+   <div class="topbar"><div class="topbarname">progn</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special form</div>
+</div>
+<span class="syntaxname">progn</span><span class="syntaxargs"><span class="syntaxargname">list</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">list</td>
+<td class="syntaxargdesc">expressions</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+PROGN calls its expression in the order they have been written.
+Resulting value is the value of the last form unless non-local control
+flow forced earlier return. See also PROG1, PROG2.
+</p>
+<p class="comment">
+Note that many macros and special forms behave partially as PROGN. It
+is called "implicit progn".
+</p>
+<pre class="example">(progn 1 2 3 4 5) =&gt; 5
+(progn 1 2 (sin 2.0) 4 (sin 1.0)) =&gt; 0.84147096
+(progn) =&gt; NIL
+</pre>
+
+ <div class="topbar"><div class="topbarname">quote</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special form</div>
+</div>
+<span class="syntaxname">quote</span><span class="syntaxargs"><span class="syntaxargname">data</span></span>
+      =&gt; <span class="syntaxresult">value</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">data</td>
+<td class="syntaxargdesc">data</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+QUOTE is special form for data quotation. The apostrophe character is
+reader macro synonym for QUOTE. See also FUNCTION.
+</p>
+<pre class="example">(+ 1 2 3) =&gt; 6
+(quote (+ 1 2 3)) =&gt; (+ 1 2 3)
+'(+ 1 2 3) =&gt; (+ 1 2 3)
+(let ((some-symbol 4)) some-symbol) =&gt; 4
+(let ((some-symbol 4)) (quote some-symbol)) =&gt; SOME-SYMBOL
+(let ((some-symbol 4)) 'some-symbol) =&gt; SOME-SYMBOL
+</pre>
+
+  <div class="topbar"><div class="topbarname">setf</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: macro</div>
+</div>
+<span class="syntaxname">setf</span><span class="syntaxargs"><span class="syntaxargname">pairs</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">pairs</td>
+<td class="syntaxargdesc">pairs of places and values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+SETF is similar to SETQ but works with generalized places. Many
+functions for read access can be turned into write access. See LET,
+SETQ. SETF expanders can be defined in multiple ways, most easier is
+(defun (setf my-name) arguments body...).
+</p>
+<pre class="example">(let (a b) (setf a 4) (setf b 3) (setf a (+ a b))) =&gt; 7
+(let ((a #(1 2 3 4))) (setf (aref a 2) 'new-value) a) =&gt; #(1 2 NEW-VALUE 4)
+(let ((a '(1 2 3 4))) (setf (third a) 'new-value) a) =&gt; (1 2 NEW-VALUE 4)
+</pre>
+
+ <div class="topbar"><div class="topbarname">setq</div></div>
+<div class="syntax">
+<div class="syntaxspec">
+<div class="syntaxinfo">Syntax:</div>
+<div class="syntaxtype">Symbol type: special form</div>
+</div>
+<span class="syntaxname">setq</span><span class="syntaxargs"><span class="syntaxargname">pairs</span><sup class="syntaxargnote">(zero or more)</sup></span>
+      =&gt; <span class="syntaxresult">an object</span><div class="args">
+<div class="syntaxarginfo">Argument description:</div>
+<table class="syntaxargtab"><tbody><tr class="arg">
+<td class="syntaxargname">pairs</td>
+<td class="syntaxargdesc">pairs of variables and values</td>
+</tr></tbody></table>
+</div>
+</div>
+<p class="comment">
+SETQ special form sets a variable. If a variable name is not know,
+implementation may create new one global and dynamic one. See also
+LET, SETF.
+</p>
+<pre class="example">(let (a b) (setq a 4) (setq b 3) (setq a (+ a b))) =&gt; 7
+</pre>
+
+   </div>
+</div>
+<div class="spacer"></div>
+<div class="botbar2"></div>
+<div class="botbar"><a class="hyperspec" href="http://www.lispworks.com/documentation/HyperSpec/Front/index.htm">Full documentation (HyperSpec)</a></div>
+
+
+</body><auto-scroll><template shadowrootmode="closed"><div style="transform: translateZ(0px); display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 2147483647; background-repeat: no-repeat;"></div></template></auto-scroll></html>
